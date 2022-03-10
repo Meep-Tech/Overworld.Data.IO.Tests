@@ -1,0 +1,1103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Simple.Ux.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Simple.Ux.Data.CannotBeNegative">
+            <summary>
+            Denotes a field that should not be negative.
+            Overriden by range slider attribute.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.DropdownAttribute">
+            <summary>
+            Used to indicate a field where you can select one of a set of options.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DropdownAttribute.#ctor(System.Int32,System.Object[],System.String[])">
+            <summary>
+            Make a new selectable
+            </summary>
+            <param name="SelectableValuesLimit">The max values this select can hold as selected values. >1 makes it a multiselect. 0 makes it disabled.</param>
+            <param name="OptionValues">The option values. If no names are provided, these are turned into strings and those are used as the field keys</param>
+            <param name="OptionNames">The option names. Must either have none, or the same number as the values</param>
+        </member>
+        <member name="T:Simple.Ux.Data.EnableIfAttribute">
+            <summary>
+            Denotes another field that indicates when this field should be enabled.
+            The other field must have a boolean type and be a property of field, or the field could be a Func[Field, View]
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.MaximumValueAttribute">
+            <summary>
+            Denotes a numeric field restricted to a minimum value.
+            Overriden by range slider attribute.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.MinimumValueAttribute">
+            <summary>
+            Denotes a numeric field restricted to a minimum value.
+            Overriden by range slider attribute.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.RangeSliderAttribute">
+            <summary>
+            Denotes a numeric field that should appear as a range slider in the UI
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.RestrictToRangeAttribute">
+            <summary>
+            Denotes a numeric field restricted to a range of values.
+            Overriden by range slider attribute.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.SimpleButtonAttribute">
+            <summary>
+            Denotes a method that should be auto rendered as a button.
+            A valid method takes either no parameters, or a SimpleButton(the one clicked on) and a Pannel as parameters.
+            TODO: impliment
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.SimpleButtonAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Make a simple button out of a method, with an overrideable display name and key.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.TooltipAttribute">
+            <summary>
+            Adds a tooltip to the field.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.ValidationAttribute">
+            <summary>
+            Denotes how the field should be validated.
+            You can name a method that takes one argument and returns a bool,
+            or for numbers you can provide (int min, int max) as a tuple.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.Column">
+            <summary>
+            A column in a simple Ux.
+            A pannel can have up to 3 columns, but 3 is the reccomended.
+            Columns can have labels at the top.
+            Columns cannot contain other columns, but Columns can contain rows.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Column.View">
+            <summary>
+            The view this field is in.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Column.Title">
+            <summary>
+            The label for this row.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Column.GetEnumerator">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Column.System#Collections#IEnumerable#GetEnumerator">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Column.Copy(Simple.Ux.Data.View)">
+            <summary>
+            Copy this column and it's contents
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Column.Simple#Ux#Data#IUxViewElement#Copy(Simple.Ux.Data.View)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Simple.Ux.Data.CollectionOfDataFields`2">
+            <summary>
+            The base class for a data field that's actually a group/collection of fields.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.CollectionOfDataFields`2.ChildFieldAttributes">
+            <summary>
+            Attributes that are applied to each child field.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.CollectionOfDataFields`2.EntryValidations">
+            <summary>
+            Extra validation to use on an individual entry whenever one is changed.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.CollectionOfDataFields`2.DefaultEntryValidations">
+            <summary>
+            The default entry validations for this type.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.CollectionOfDataFields`2.Item(`0)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.CollectionOfDataFields`2.#ctor(Simple.Ux.Data.DataField.DisplayType,System.String,System.String,System.Object,System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.Attribute})">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.CollectionOfDataFields`2.TryToUpdateValueAtIndex(`0,System.Object,System.String@)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.CollectionOfDataFields`2.RunEntryValidationsOn(`0,System.Object,System.String@)">
+            <summary>
+            used to run validations on an entry added to a collection field.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.CollectionOfDataFields`2.Copy(Simple.Ux.Data.View,System.Boolean)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.CollectionOfDataFields`2.TryToRemoveLastEntry(System.String@)">
+            <summary>
+            try to remove the last item from the collection
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.CollectionOfDataFields`2.TryToRemoveEntryAt(System.String,System.String@)">
+            <summary>
+            remove the item at the collection index
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.CollectionOfDataFields`2.TryToAppendNewEntry(System.String,System.Object,System.String@)">
+            <summary>
+            Try to add a new entry to the end of this list.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.CollectionOfDataFields`2.TryToAppendNewEmptyEntry(System.String@)">
+            <summary>
+            Try to add a new empty entry to the end of this list.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.CollectionOfDataFields`2._copyValueAndDefaults(Simple.Ux.Data.View,System.Boolean)">
+            <summary>
+             Implimentation needed to complete to Copy function.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.DataField">
+            <summary>
+            A data field for input or display in a simple ux pannel/view
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.Name">
+            <summary>
+            The name of the field.
+            Used as a default data key
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.DataKey">
+            <summary>
+            Data key for the field.
+            Used to access it from the editor component display data.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.Tooltip">
+            <summary>
+            Info tooltip for the field
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.Value">
+            <summary>
+            The current value of the field.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.DefaultValue">
+            <summary>
+            The default initial value.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.IsReadOnly">
+            <summary>
+            If this field is readonly
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.Type">
+            <summary>
+            The type of display this field should use.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.View">
+            <summary>
+            The view this field is in.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.EnabledIfCheckers">
+            <summary>
+            Functions that check if the current field should be enabled.
+            Called when another field in the same view is updated, or Update is called on the view.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.DefaultEnabledIfCheckers">
+            <summary>
+            Default enable if checkers added to the field.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.HideIfCheckers">
+            <summary>
+            Functions that check if the current field should be hidden.
+            Called when another field in the same view is updated, or Update is called on the view.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.DefaultHideIfCheckers">
+            <summary>
+            Default hide if checkers added to the field.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.IsEnabled">
+            <summary>
+            If this field should be enabled for editing.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.IsHidden">
+            <summary>
+            If this field should be hidden to the current view
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.ShouldBeTrackedByView">
+            <summary>
+            If this field should be tracked by it's view
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.#ctor(Simple.Ux.Data.DataField.DisplayType,System.String,System.String,System.Object,System.String,System.Boolean)">
+            <summary>
+            Make a new data field for a Simple Ux.
+            </summary>
+            <param name="type">the DisplayType to use for this field</param>
+            <param name="name">the field name. should be unique unless you change the data key</param>
+            <param name="tooltip">a breif description of the field, will appear on mouse hover in the ui</param>
+            <param name="value">default/current value of the field</param>
+            <param name="dataKey">Used to get the value of this field from the view</param>
+            <param name="isReadOnly">Some read only fields may be formatted differently (like Text). try passing '() => false' to enable if you want a blured out input field instead.</param>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.TryToSetValue(System.Object,System.String@)">
+            <summary>
+            Try to update the field value to a new one.
+            Checks validations and returns an error message if there is one.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.Validate(System.Object,System.String@)">
+            <summary>
+            Used to run validations on the given value.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.Copy(Simple.Ux.Data.View,System.Boolean)">
+            <summary>
+            Memberwise clone to copy
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.Enable(System.Boolean)">
+            <summary>
+            Manually sets the field to show as enabled.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.Disable(System.Boolean)">
+            <summary>
+            Manually sets the field to show as disabled.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.SetEnabled(System.Boolean,System.Boolean)">
+            <summary>
+            Used to toggle this field enabled or disabled manually.
+            Can be used with or without the current checker delegates in EnabledIfCheckers.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.ResetIsEnabled">
+            <summary>
+            Reset the is-enabled state to use just the EnabledIfCheckers, and no manually set value
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.Hide(System.Boolean)">
+            <summary>
+            Manually set this field to unhidden.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.UnHide(System.Boolean)">
+            <summary>
+            Manually set this field to hidden.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.SetHidden(System.Boolean,System.Boolean)">
+            <summary>
+            Used to toggle this field hidden or visible manually.
+            Can be used with or without the current checker delegates in HiddenIfCheckers.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.ResetIsHidden">
+            <summary>
+            Reset the is-hidden state to use just the HiddenIfCheckers, and no manually set value
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.ResetValueToDefault">
+            <summary>
+            Reset the value of this field to it's default
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.Simple#Ux#Data#IUxViewElement#Copy(Simple.Ux.Data.View)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.Make(Simple.Ux.Data.DataField.DisplayType,System.String,System.String,System.Object,System.Boolean,System.Func{Simple.Ux.Data.DataField,Simple.Ux.Data.View,System.Boolean},System.String,System.Collections.Generic.Dictionary{System.Type,System.Attribute},System.Func{Simple.Ux.Data.DataField,System.Object,System.ValueTuple{System.Boolean,System.String}}[])">
+            <summary>
+            Make a new field that fits your needs.
+            Some field types require attribute data.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.MakeDefault(Simple.Ux.Data.DataField.DisplayType,System.String,System.String,System.Object,System.Boolean,System.String,Meep.Tech.Collections.Generic.DelegateCollection{System.Func{Simple.Ux.Data.DataField,Simple.Ux.Data.View,System.Boolean}},Meep.Tech.Collections.Generic.DelegateCollection{System.Func{Simple.Ux.Data.DataField,Simple.Ux.Data.View,System.Boolean}},Meep.Tech.Collections.Generic.DelegateCollection{System.Func{Simple.Ux.Data.DataField,System.Object,System.ValueTuple{System.Boolean,System.String}}},Meep.Tech.Collections.Generic.DelegateCollection{System.Action{Simple.Ux.Data.DataField,System.Object}},System.Collections.Generic.Dictionary{System.Type,System.Attribute})">
+            <summary>
+            Make a new field that fits your needs.
+            Some field types require attribute data.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.AddValueChangeListener(System.String,System.Action{Simple.Ux.Data.DataField,System.Object})">
+            <summary>
+            Generic function for adding a value change listener without knowing the type.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.DataField.DisplayType">
+            <summary>
+            How a data field should be displayed.
+            Also contains the basic display types.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.DisplayType.Text">
+            <summary>
+            A text field
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.DisplayType.Toggle">
+            <summary>
+            A checkbox/toggle field for a boolean value
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.DisplayType.RangeSlider">
+            <summary>
+            A slideable numeric input that's clamped by a max and min
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.DisplayType.Dropdown">
+            <summary>
+            A dropdown with pre-set options
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.DisplayType.FieldList">
+            <summary>
+            An expandable collection of other fields by numeric index
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.DisplayType.KeyValueFieldList">
+            <summary>
+            An expandable collection of other fields by string index
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField.DisplayType.Button">
+            <summary>
+            A simple button that can be clicked to do things.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField.DisplayType.#ctor(System.String,Simple.Ux.Data.DataField.DisplayType.DefaultFieldConstructor,System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Make a new display type
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.DataField.DisplayType.DefaultFieldConstructor">
+            <summary>
+            Used to construct a default field.
+            Usually via attribute/reflection construction.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.DataField`1">
+            <summary>
+            A data field for input or display in a simple ux pannel/view
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField`1.OnValueChangedListeners">
+            <summary>
+            Actions to be executed on change.
+            Takes the current field, and the old value.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField`1.DefaultOnValueChangedListeners">
+            <summary>
+            Default fields added to the on changed listeners on init.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField`1.Validations">
+            <summary>
+            Functions that take the current field, and updated object data, and validate it.
+            Called whenever the value is changed. If the validation fails, the data view's value won't change from it's previous one.
+            TODO: if a field is invalid, a red X should appear to clear/reset it with a tooltip explaining why it's invalid.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField`1.DefaultValidations">
+            <summary>
+            Default validations added to the field.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataField`1.Value">
+            <summary>
+            The value(s) selected.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField`1.#ctor(Simple.Ux.Data.DataField.DisplayType,System.String,System.String,System.Object,System.String,System.Boolean)">
+            <summary>
+            For making new datafield types
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField`1.Copy(Simple.Ux.Data.View,System.Boolean)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField`1.AddValueChangeListener(System.String,System.Action{Simple.Ux.Data.DataField,System.Object})">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataField`1.Validate(System.Object,System.String@)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Simple.Ux.Data.DataFieldKeyValueSet">
+            <summary>
+            Represents a key value set in a ui
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataFieldKeyValueSet.Keys">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataFieldKeyValueSet.Values">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataFieldKeyValueSet.Count">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataFieldKeyValueSet.#ctor(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{System.Attribute},System.String,System.Boolean)">
+            <summary>
+            Make a key value set to display in a ux.
+            </summary>
+            <param name="childFieldAttributes">Add attributes to each generated child input</param>
+        </member>
+        <member name="P:Simple.Ux.Data.DataFieldKeyValueSet.Item(System.String)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataFieldKeyValueSet._copyValueAndDefaults(Simple.Ux.Data.View,System.Boolean)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataFieldKeyValueSet.ContainsKey(System.String)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataFieldKeyValueSet.TryGetValue(System.String,System.Object@)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataFieldKeyValueSet.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataFieldKeyValueSet.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataFieldKeyValueSet.GetEnumerator">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Simple.Ux.Data.DataFieldSet">
+            <summary>
+            Represents a key value set in a ui
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataFieldSet.DataType">
+            <summary>
+            The type of data this set holds.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DataFieldSet.Item(System.Int32)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DataFieldSet.#ctor(System.String,System.Type,System.Collections.Generic.IEnumerable{System.Attribute},System.String,System.Collections.ArrayList,System.String,System.Boolean)">
+            <summary>
+            Make a key value set to display in a ux.
+            </summary>
+            <param name="dataType">The type of data the list will accept</param>
+            <param name="childFieldAttributes">Add attributes to each generated child input</param>
+            <param name="rowValues">The default/current list values</param>
+        </member>
+        <member name="M:Simple.Ux.Data.DataFieldSet._copyValueAndDefaults(Simple.Ux.Data.View,System.Boolean)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Simple.Ux.Data.DropdownSelectField`1">
+            <summary>
+            A drop down that can select enum values
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.DropdownSelectField">
+            <summary>
+            A drop down that can select values
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DropdownSelectField.Options">
+            <summary>
+            The valid options, indexed by their display key.
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Data.DropdownSelectField.DefaultDropdownOptionsValidationDelegateKey">
+            <summary>
+            The delegate collection key for the default dropdown options validation method
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DropdownSelectField.OnSelectableValueLimitChangeListeners">
+            <summary>
+            Actions to be executed when the amount of values this can hold changes.
+            Takes the current field, and the old limit.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DropdownSelectField.MultiSelectAllowed">
+            <summary>
+            If the user can select more than one value
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DropdownSelectField.MaxValuesAllowed">
+            <summary>
+            The max values allowed to be selected at once.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.DropdownSelectField.DefaultValidations">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.DropdownSelectField.Copy(Simple.Ux.Data.View,System.Boolean)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Simple.Ux.Data.IIndexedItemsDataField`1">
+            <summary>
+            A Data field that is an indexed collection of other fields.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.IIndexedItemsDataField`1.TryToUpdateValueAtIndex(`0,System.Object,System.String@)">
+            <summary>
+            Called after an individual field has validated itself.
+            Used to update the internal Value at the key with the updated child field value.
+            This should call RunValidationsOn.
+            TODO: break this up into a few smaller functions like RunEntryValidationsOn()
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.IIndexedItemsDataField">
+            <summary>
+            A Data field that is an indexed collection of other fields.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.IIndexedItemsDataField.TryToUpdateValueAtIndex(System.Object,System.Object,System.String@)">
+            <summary>
+            Called after an individual field has validated itself.
+            Used to update the internal Value at the key with the updated child field value.
+            This should call RunValidationsOn.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.RangeSliderField">
+            <summary>
+            A slider for a value between the min and max.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.RangeSliderField.ValidRange">
+            <summary>
+            The valid range for this slider
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.RangeSliderField.IsClampedToWholeNumbers">
+            <summary>
+            If this only allows whole numbers
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.RangeSliderField.TryToSetValue(System.Object,System.String@)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Simple.Ux.Data.ReadOnlyTextField">
+            <summary>
+            A Text specific Simple Ux Field.
+            Used just to display text
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.SimpleButton">
+            <summary>
+            Represents a simple clickable button in a ui.
+            You can add more onClick callbacks via the OnValueChangeListeners callbacks.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.SimpleButton.#ctor(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Make a clickable UI button that does something on click.
+            You can add more onClick callbacks via the OnValueChangedListeners callbacks.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.SimpleButton.Click">
+            <summary>
+            Used to update the colletction
+            You can add more onClick callbacks via the OnValueChangedListeners callbacks.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.TextField">
+            <summary>
+            A Text specific Simple Ux Field.
+            Can be used for input, or Read Only for just display text.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.TextField.PlaceholderText">
+            <summary>
+            Placeholder text for the input
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.ToggleField">
+            <summary>
+            A boolean toggle specific Simple Ux Field.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.EmptySpacer">
+            <summary>
+            Used to space contents with an empty space, as if a title or minimum height field was present.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.EmptySpacer.View">
+            <summary>
+            The view this field is in.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.IUxViewElement">
+            <summary>
+            An element of a Simple Ux View.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.IUxViewElement.View">
+            <summary>
+            The view this element is in.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.IUxViewElement.Copy(Simple.Ux.Data.View)">
+            <summary>
+            Make a copy of the element and it's state.
+            Provide the new view if there is one, if not, it will be set on setting in the builder.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.Pannel">
+            <summary>
+            Display data for a component.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Pannel.Key">
+            <summary>
+            The tab data for this pannel
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Pannel.View">
+            <summary>
+            The view this field is in.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Pannel.Elements">
+            <summary>
+            The fiels in this model, by key.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Pannel.Copy(Simple.Ux.Data.View)">
+            <summary>
+            Copy this pannels UI scheme.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Pannel.Simple#Ux#Data#IUxViewElement#Copy(Simple.Ux.Data.View)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Pannel.GetEnumerator">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Simple.Ux.Data.Pannel.Tab">
+            <summary>
+            A tab used to switch between pannels of a simple ux.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Pannel.Tab.View">
+            <summary>
+            The view this is attached to
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Pannel.Tab.Pannel">
+            <summary>
+            The pannel for this tab:
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Data.Pannel.Tab.Key">
+            <summary>
+            Tab optional key, name is used by default
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Data.Pannel.Tab.Name">
+            <summary>
+            Tab display name
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Data.Pannel.Tab.Tooltip">
+            <summary>
+            Optional tab tooltip
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Data.Pannel.Tab.ImageLocationWithinModPackageFolder">
+            <summary>
+            If you want an icon, an can be placed in your mod package containing this Ux Pannel, and the url after mods/$PackageName$/ should go here.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Pannel.Tab.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Make a new tab for a pannel
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Pannel.Tab.Copy(Simple.Ux.Data.View)">
+            <summary>
+            Copy this tab.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Pannel.Tab.GetHashCode">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Simple.Ux.Data.Row">
+            <summary>
+            A Row of UX items.
+            Can't contain columns or other rows.
+            Can have a label.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Row.View">
+            <summary>
+            The view this field is in.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Row.Label">
+            <summary>
+            The label for this row.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Row.LabelTooltip">
+            <summary>
+            Info tooltip for the row label
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Row.GetEnumerator">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Row.System#Collections#IEnumerable#GetEnumerator">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Row.Copy(Simple.Ux.Data.View)">
+            <summary>
+            Copy this row and it's contents
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Row.Simple#Ux#Data#IUxViewElement#Copy(Simple.Ux.Data.View)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Simple.Ux.Data.Title">
+            <summary>
+            A title that takes up it's own row, or can be added to a row or column to prefix it.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Title.View">
+            <summary>
+            The view this title is in.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.Title.FontSize">
+            <summary>
+            Title Size
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Data.Title.Text">
+            <summary>
+            The tile text
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Data.Title.Tooltip">
+            <summary>
+            The tile tooltip
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Title.Size">
+            <summary>
+            The title size
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Title.#ctor(System.String,System.String)">
+            <summary>
+            Make a title for a UX.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Title.Copy(Simple.Ux.Data.View)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Simple.Ux.Data.View">
+            <summary>
+            A simple ux view, with controls, and potentially with multiple pannels that contain content.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.View.Id">
+            <summary>
+            The unique id of this view
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.View.Context">
+            <summary>
+            Extra context you can provide to the component.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.View.MainTitle">
+            <summary>
+            The main title of this view.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.View.HasMultiplePannels">
+            <summary>
+            If this view has more than one pannel.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.View.NumberOfTabs">
+            <summary>
+            The number of tabs/pannels
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.GetPannel(Simple.Ux.Data.Pannel.Tab)">
+            <summary>
+            Get the pannel at the given tab
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.GetPannel(System.String,Simple.Ux.Data.Pannel.Tab@)">
+            <summary>
+            Get the pannel at the given tab
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.GetPannel(System.Int32,Simple.Ux.Data.Pannel.Tab@)">
+            <summary>
+            Get the pannel at the given tab
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.GetPannel(System.Int32)">
+            <summary>
+            Get the pannel at the given tab
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.GetTab(System.Int32)">
+            <summary>
+            Get the pannel at the given tab
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.GetTab(System.String)">
+            <summary>
+            Get the pannel at the given tab
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.GetField(System.String)">
+            <summary>
+            Get a field by key
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.TryToGetField(System.String)">
+            <summary>
+            try to get a field by key
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.TryToGetField(System.String,Simple.Ux.Data.DataField@)">
+            <summary>
+            try to get a field by key
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.GetField``1(System.String)">
+            <summary>
+            Get a field by key
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.TryToGetField``1(System.String)">
+            <summary>
+            try to get a field by key
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.TryToGetField``1(System.String,``0@)">
+            <summary>
+            try to get a field by key
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.GetFieldValue(System.String)">
+            <summary>
+            Get a field value by key
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.GetFieldValue``1(System.String)">
+            <summary>
+            Get a field value by key
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.TryToGetValueFromKeyValueFieldSet``1(System.String,System.String)">
+            <summary>
+            Try to Get a field value by key
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.TryToGetValueFromKeyValueFieldSet``1(System.String,System.String,``0@)">
+            <summary>
+            Try to Get a field value by key
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.GetValueFromKeyValueFieldSet``1(System.String,System.String)">
+            <summary>
+            Get a field value by key
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.Copy">
+            <summary>
+            Copy this view layout and current values to a brand new view with a new id.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.View.GetEnumerator">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.ViewBuilder">
+            <summary>
+            Used to build the simple Ux
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.ViewBuilder.CurrentPannelTab">
+            <summary>
+            The current panel tab this builder is working on
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.ViewBuilder.CurrentColumnLabel">
+            <summary>
+            The current panel tab this builder is working on
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.ViewBuilder.FieldCountForCurrentColumn">
+            <summary>
+            How many entries have been added to the current column
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.ViewBuilder.ColumnCountForCurrentPannel">
+            <summary>
+            How many columns have been added to the current pannel
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.ViewBuilder.FinishedPannelCountForCurrentBuilder">
+            <summary>
+            How many finished pannels have been added to the current builder
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.#ctor(System.String)">
+            <summary>
+            Make a new simple Overworld Ux builder.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.#ctor(Simple.Ux.Data.Title)">
+            <summary>
+            Make a new simple Overworld Ux builder.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.BuildDefaultField(System.Reflection.FieldInfo,System.Collections.Generic.Dictionary{System.Type,System.Attribute})">
+            <summary>
+            Build a default field using the field
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.BuildDefaultField(System.Reflection.PropertyInfo,System.Collections.Generic.Dictionary{System.Type,System.Attribute})">
+            <summary>
+            Build a default field using the property
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.Copy">
+            <summary>
+            Copy this builder.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.Clear(Simple.Ux.Data.Title)">
+            <summary>
+            reset and empty this builder
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.AddCustomElement(Simple.Ux.Data.IUxViewElement)">
+            <summary>
+            Add a custom made element to the current column
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.AddField(Simple.Ux.Data.DataField)">
+            <summary>
+            Add a data field.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.AddHeader(Simple.Ux.Data.Title)">
+            <summary>
+            Add a header inside of a column.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.AddEmptySpacer">
+            <summary>
+            Add an empty row with min height (about the height of a header)
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.AddRow(Simple.Ux.Data.DataField[])">
+            <summary>
+            Add a formatted row of controls, inputs, or Ux items.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.AddRow(Simple.Ux.Data.Title,Simple.Ux.Data.DataField[])">
+            <summary>
+            Add a formatted row of controls, inputs, or Ux items. Give it a label to the left:
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.AddRow(System.Collections.Generic.IEnumerable{Simple.Ux.Data.DataField},Simple.Ux.Data.Title)">
+            <summary>
+            Add a formatted row of controls, inputs, or Ux items.
+            You can also give it a label to the left:
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.AddColumn(Simple.Ux.Data.IUxViewElement[])">
+            <summary>
+            Add a formatted column of controls, inputs, or Ux items.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.AddColumn(Simple.Ux.Data.Title,Simple.Ux.Data.IUxViewElement[])">
+            <summary>
+            Add a formatted column of controls, inputs, or Ux items. Give it a label to the left:
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.AddColumn(System.Collections.Generic.IEnumerable{Simple.Ux.Data.IUxViewElement},Simple.Ux.Data.Title)">
+            <summary>
+            Add a formatted column of controls, inputs, or Ux items.
+            You can also give it a label to the left:
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.StartNewColumn(Simple.Ux.Data.Title)">
+            <summary>
+            Starts a new column. Label is optional.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.AddPannel(Simple.Ux.Data.Pannel.Tab,Simple.Ux.Data.Pannel)">
+            <summary>
+            Adds a whole pre-built pannel after the current one (or first if this is starting).
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.StartNewPannel(Simple.Ux.Data.Pannel.Tab)">
+            <summary>
+            Starts a new pannel with the given name.
+            If this isn't called first, everuthing before is put in a default pannel has the main tilte's name.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.SetCurrentPannelTab(Simple.Ux.Data.Pannel.Tab)">
+            <summary>
+            Sets the current pannel tab's data if there isn't any
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.SetCurrentColumnHeader(Simple.Ux.Data.Title)">
+            <summary>
+            Sets the current columns header if there isn't one already set
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder.Build">
+            <summary>
+            Build and return the view.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.ViewBuilder._addElementToCurrentPannel(Simple.Ux.Data.IUxViewElement)">
+            <summary>
+            Add an element like a pre-built column or row or field to the current pannel.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Extensions.ToDisplayCase(System.String)">
+            <summary>
+            Make a string from "CamelCase" to "Display Case"
+            </summary>
+        </member>
+    </members>
+</doc>

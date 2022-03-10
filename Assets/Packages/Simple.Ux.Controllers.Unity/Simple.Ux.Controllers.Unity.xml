@@ -1,0 +1,1004 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Simple.Ux.Controllers.Unity</name>
+    </assembly>
+    <members>
+        <member name="F:Simple.Ux.Controllers.Unity.Utility.BringToFrontOnClickForUxMenuController._target">
+            <summary>
+            What should be brought to the front when this is clicked.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.Utility.DraggableHandleForUxMenuController">
+            <summary>
+            A handle for dragging a UX menu. Ususually used on titles.
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Controllers.Unity.Utility.DraggableHandleForUxMenuController._target">
+            <summary>
+            What should be dragged when this is clicked.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.Utility.HandlerType">
+            <summary>
+            How this expands
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.Utility.FlexibleResizeHandler">
+            <summary>
+            Resizeable Handler for SimpleUx.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.Utility.ReadOnlyAttribute">
+            <summary>
+            From: https://answers.unity.com/questions/489942/how-to-make-a-readonly-property-in-inspector.html
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.Utility.RectSizeLimiter">
+            <summary>
+            From: https://bitbucket.org/snippets/Democritus/5ex7n4
+            https://forum.unity.com/threads/rect-transform-size-limiter.620860/
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.ColumnController.Title">
+            <summary>
+            The (optional) column title
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.ColumnController.Column">
+            <summary>
+            The column this represents
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Controllers.Unity.ColumnController._rows">
+            <summary>
+            The rows of items in this column
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.CheckboxFieldController">
+            <summary>
+            A simple ux controller for a checkbox toggle field
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.DropdownFieldController">
+            <summary>
+            A simple ux controller for a range slider field
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.FieldController">
+            <summary>
+            The base class for simple UX field controllers.
+            This should be placed on the field.
+            To impliment this properly there should be a call to OnFieldChanged() in the child class somewhere.
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Controllers.Unity.FieldController.ValidFieldInputBackgroundColor">
+            <summary>
+            The default background color for the input of the field when it's value is valid
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Controllers.Unity.FieldController.InvalidFieldInputBackgroundColor">
+            <summary>
+            The default background color for the input of the field when it's value is invalid
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.FieldController.TitleObject">
+            <summary>
+            The object for the title of this field.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.FieldController.Title">
+            <summary>
+            The title of this field.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.FieldController.DisplayType">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.FieldController.ValidFieldDataTypes">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.FieldController.View">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.FieldController.FieldData">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.FieldController.Element">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.FieldController.Parent">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.FieldController.Column">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.FieldController.Row">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.FieldController.RectTransform">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.IntializeForFieldData">
+            <summary>
+            Used to initialize the field for the applied FieldData.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.AddOnChangeListener(Simple.Ux.Data.DataField)">
+            <summary>
+            Used to attach OnFieldChanged to a listener.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.OnFieldChanged">
+            <summary>
+            Should be called when the field is changed.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.GetCurrentlyDisplayedValue">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.SetFieldEnabled(System.Boolean)">
+            <summary>
+            Used to set the field as enabled or disbaled.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.SetFieldVisible(System.Boolean)">
+            <summary>
+            Used to set the field as enabled or disbaled.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.SetFieldValid(System.Boolean)">
+            <summary>
+            Used to set the field as valid or invalid.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.OnThisFieldUpdated(Simple.Ux.Data.DataField)">
+            <summary>
+            Can add extra logic when this field specifically is updated.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController._onOtherFieldUpdated(Simple.Ux.Data.View,Simple.Ux.Data.IUxViewElement)">
+            <summary>
+            Called when any other field in the view is updated, including this one.
+            updatedElement may also be null (this happens when the view first finishes initializing).
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.OnOtherFieldValueChanged(Simple.Ux.Data.View,Simple.Ux.Data.IUxViewElement)">
+            <summary>
+            Called when any other field in the view is updated, including this one.
+            updatedElement may also be null (this happens when the view first finishes initializing).
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.RefreshCurrentDisplayForCurrentValue(System.Object)">
+            <summary>
+            Used to refresh the currently displayed value to the internal one.
+            For use in the full revert, and for you to initialize the displayed value in InitializeFor
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.SwitchToRowMode(Simple.Ux.Controllers.Unity.RowController)">
+            <summary>
+            Can be used to switch to row mode.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.ValidateFieldType(System.Type,System.Collections.Generic.HashSet{System.Type})">
+            <summary>
+            Can be used to help validate the field type.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.TryToUpdateFieldValue(System.Object,System.String@)">
+            <summary>
+            Try to update a field value, and update the displayed view.
+            Use this to manually update the value of a view externally.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.RefreshCurrentlyDisplayedValue">
+            <summary>
+            Used to refresh the currently displayed value to the internal one
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController._updateFieldEnabledState">
+            <summary>
+            Can be used to check if the field should be enabled, and update the field to the correct state.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController._updateFieldHiddenState">
+            <summary>
+            Can be used to check if the field should be hidden, and update the field to the correct state.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.FieldController.GetTitleText">
+            <summary>
+            Used to get the title text from the field data.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.IFieldController">
+            <summary>
+            An in game controller for a simple ux field.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.IFieldController.DisplayType">
+            <summary>
+            The display type of this field
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.IFieldController.ValidFieldDataTypes">
+            <summary>
+            This can be overriden to force validation of the DataField to a handful of types, or one type ,etc.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.IFieldController.FieldData">
+            <summary>
+            The field data this is controlling.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.IFieldController.Title">
+            <summary>
+            The gamobject that represents the field's title.
+            Used for tooltip hover.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.IFieldController.GetCurrentlyDisplayedValue">
+            <summary>
+            Get the current in game value displayed in this simple Ux Field.
+            This could be different from the value in FieldData.Value if the
+              value entered into the input is invalid.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.RangeSliderFieldController">
+            <summary>
+            A simple ux controller for a range slider field
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.TextFieldController">
+            <summary>
+            A simple ux controller for a text field
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.IColumnElementController">
+            <summary>
+            Controls a simple ux element that can be placed in a column
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.IColumnElementController.Column">
+            <summary>
+            The column this is part of
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.IColumnElementController.RectTransform">
+            <summary>
+            The rectransform.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.IElementContainerController">
+            <summary>
+            A parent that can contain child element controllers
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.IElementController">
+            <summary>
+            The base interface for an element of a View
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.IElementController.Parent">
+            <summary>
+            The parent that contains this element.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.IElementController.View">
+            <summary>
+            The controller for the view this is a part of
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.IElementController.Element">
+            <summary>
+            The element the controller represents
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.IRowElementController">
+            <summary>
+            Controls a simple ux element that can be placed in a row
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.IRowElementController.Row">
+            <summary>
+            The column this is part of
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.IRowElementController.RectTransform">
+            <summary>
+            The rectransform.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.PannelController.Pannel">
+            <summary>
+            The pannel this represents
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.PannelTabController.View">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.PannelTabController.Tab">
+            <summary>
+            The tab data
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.PannelTabController.Element">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.PannelTabController.Parent">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.PannelTabController.Pannel">
+            <summary>
+            The pannel this tab controls.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.RowController.Column">
+            <summary>
+            The column this is in
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.RowController.Row">
+            <summary>
+            The row data
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.RowController.Label">
+            <summary>
+            The (optional) column title
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Controllers.Unity.RowController._elements">
+            <summary>
+            The rows of items in this column
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.RowController.Element">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.RowController.Parent">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.TitleController.View">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.TitleController.Column">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.TitleController.Row">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.TitleController.Parent">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.TitleController.RectTransform">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.TitleController.Title">
+            <summary>
+            The title this represents
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.TitleController.IsTopTitleForColumn">
+            <summary>
+            If this is the Title for a Column Header
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.TitleController.Element">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.TooltipController">
+            <summary>
+            A hovering tooltip.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.ViewController">
+            <summary>
+            A controller for an Simple Ux View.
+            This should be attached to the sizing contaner for the view.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.ViewController.FieldControllerPrefabs">
+            <summary>
+            The controller prefabs for each type of Simple Ux Field.
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Controllers.Unity.ViewController._activePannelKey">
+            <summary>
+            The currently active pannel's index
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.ViewController.RectTransform">
+            <summary>
+            The rect transform for the view window.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.ViewController.TitleText">
+            <summary>
+            The title text element
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.ViewController.ShouldShowCloseButton">
+            <summary>
+            If this view should show it's close button.
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Controllers.Unity.ViewController.IsPersistent">
+            <summary>
+            If this view's data should be kept after it's closed.
+            If this is false, this view will reset it's data on close.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.ViewController.IsOpen">
+            <summary>
+            If this view is currently open and displayed to the user
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.ViewController.Data">
+            <summary>
+            The data model for the View this is controlling
+            </summary>
+        </member>
+        <member name="F:Simple.Ux.Controllers.Unity.ViewController._changedFields">
+            <summary>
+            Used to revert changes.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Controllers.Unity.ViewController.Id">
+            <summary>
+            The unique id of this view window
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.Awake">
+            <summary>
+            Setup
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.InitializeFor(Simple.Ux.Data.View)">
+            <summary>
+            Initialize this view for the view data.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.ResetTitle">
+            <summary>
+            Reset the title to the default.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.GetField(System.String)">
+            <summary>
+             Get a field controller by key.
+             Throws on failure.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.TryToGetField(System.String,Simple.Ux.Controllers.Unity.FieldController@)">
+            <summary>
+            Try to get a field controller by key.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.TryToGetField(System.String)">
+            <summary>
+            Try to get a field controller by key.
+            null on not found
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.TryToUpdateFieldValue(System.String,System.Object,System.String@)">
+            <summary>
+            Try to set a field value by key.
+            This will update the displayed field value.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.UpdateFieldValue(System.String,System.Object)">
+            <summary>
+            Set a field value by key.
+            This will update the displayed field value.
+            This throws on failure
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.RevertAllChanges">
+            <summary>
+            Revert the changes in the forum to their defaults.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.Refresh">
+            <summary>
+            Refresh all field's displayed values based on the internal data model.
+            This could be costly.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.Close">
+            <summary>
+            Close this view
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.Open">
+            <summary>
+            Close this view
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.Destroy">
+            <summary>
+            Destroy this view entirely.
+            Make sure to remove the view from tracking by the view manager first.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.MoveToScreenPixelLocation(UnityEngine.Vector2)">
+            <summary>
+            Move a window to the screen location, centering on the window's center
+            </summary>
+            <param name="centerOnScreenPixelLocation">pixel location on the game area screen where the window should be centered. Bottom Left is 0,0 Top right is Max,Max</param>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.MoveToScreenPercent(UnityEngine.Vector2)">
+            <summary>
+            Move a window to the screen location, centering on the window's center
+            </summary>
+            <param name="centerOnScreenPercentLocation">two floats between 0 and 1 representing the location on the game area screen where the window should be centered. Bottom Left is 0,0, Top Right is 1,1</param>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.MoveTitleToScreenPercent(UnityEngine.Vector2)">
+            <summary>
+            Move a window to the screen location, centering on it's title
+            </summary>
+            <param name="centerOnScreenPixelLocation">pixel location on the game area screen where the window should be centered. Bottom Left is 0,0</param>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController.MoveTitleToScreenPixelLocation(UnityEngine.Vector2)">
+            <summary>
+            Move a window to the screen location, centering on it's title
+            </summary>
+            <param name="centerOnScreenPixelLocation">pixel location on the game area screen where the window should be centered. Bottom Left is 0,0</param>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController._onUpdated(Simple.Ux.Data.IUxViewElement)">
+            <summary>
+            Called when an element of the view is updated.
+            </summary>
+            <param name="originalData">The element before it was edited.</param>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController._setActiveTab(Simple.Ux.Data.Pannel.Tab)">
+            <summary>
+            Set the active tab
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController._addPannel(Simple.Ux.Data.Pannel.Tab,Simple.Ux.Data.Pannel)">
+            <summary>
+            Add a pannel to this Ux
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Controllers.Unity.ViewController._calculateTallestPannelHeight">
+            <summary>
+            Gets the tallest pannel height within a limit of 5 fields.
+            Also sets pannel height to their own max, and column height to their own max.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Controllers.Unity.ViewController.HistoricalAction">
+            <summary>
+            A historical action for recording changes to the view.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Managers.Unity.SimpleUxGlobalManager">
+            Manages global values for simple ux
+        </member>
+        <member name="P:Simple.Ux.Managers.Unity.SimpleUxGlobalManager.Globals">
+            <summary>
+            The globals instance
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager">
+            <summary>
+            Controlls all the views for a player in a world.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.AllWindows">
+            <summary>
+            All of the tracked windows in this manager
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.PersistentWindows">
+            <summary>
+            The views with perminant data (maintained on close), indexed by view's key
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.TemporatryWindows">
+            <summary>
+            tracked windows with temp data (cleared on close), indexed by their view keys 
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.Current">
+            <summary>
+            The current set of views being controller and managed.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.GetWindow(System.String)">
+            <summary>
+            Get a window by it's id.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.GetPersistentViewWindow(System.String)">
+            <summary>
+            Get a window by it's id.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.TryToGetWindow(System.String)">
+            <summary>
+            Get a window by it's id.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.TryToGetWindow(System.String,Simple.Ux.Controllers.Unity.ViewController@)">
+            <summary>
+            Get a window by it's id.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.TryToGetPersistentViewWindow(System.String)">
+            <summary>
+            Get a window by it's id.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.TryToGetPersistentViewWindow(System.String,Simple.Ux.Controllers.Unity.ViewController@)">
+            <summary>
+            Get a window by it's id.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.FindViewsByMainTitle(System.String)">
+            <summary>
+            Try to find all the views with the given chunk of text in their main title.
+            </summary>
+            <param name="titleToFind">Not case sensitive, Can find by substring.</param>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.ViewIsOpen(System.String)">
+            <summary>
+            Check if the given view is open
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.ViewIsOpen(System.String,System.Boolean@)">
+            <summary>
+            Check if the given view is open
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.WindowIsOpen(Simple.Ux.Controllers.Unity.ViewController)">
+            <summary>
+            Check if the given tracked view is open
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.WindowIsOpen(System.String)">
+            <summary>
+            Check if the given tracked view is open
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.WindowIsTracked(Simple.Ux.Controllers.Unity.ViewController)">
+            <summary>
+            Check if the given view is tracked by the view manager
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.WindowIsTracked(System.String,Simple.Ux.Controllers.Unity.ViewController@)">
+            <summary>
+            Check if the given view is tracked by the view manager
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.WindowIsTracked(System.String)">
+            <summary>
+            Check if the given view is tracked by the view manager
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.OpenView(Simple.Ux.Data.View,System.Boolean)">
+            <summary>
+            Display a view to the user as a window
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.OpenPersistentView(System.String)">
+            <summary>
+            Display an already tracked persistent view to the user
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.OpenWindow(Simple.Ux.Controllers.Unity.ViewController)">
+            <summary>
+            Display a view to the user
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.OpenWindow(System.String)">
+            <summary>
+            Display a view to the user
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.OpenViewInWorldEditorMode(Simple.Ux.Data.View,System.Boolean)">
+            <summary>
+            Display a view to the user
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.MoveWindowToScreenPixelLocation(System.String,UnityEngine.Vector2)">
+            <summary>
+            Move a window to the screen location, centering on the window's center
+            </summary>
+            <param name="viewWindowId"></param>
+            <param name="centerOnScreenPixelLocation">pixel location on the game area screen where the window should be centered. Bottom Left is 0,0 Top right is Max,Max</param>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.MoveWindowToScreenPercent(System.String,UnityEngine.Vector2)">
+            <summary>
+            Move a window to the screen location, centering on the window's center
+            </summary>
+            <param name="viewWindowId"></param>
+            <param name="centerOnScreenPercentLocation">two floats between 0 and 1 representing the location on the game area screen where the window should be centered. Bottom Left is 0,0, Top Right is 1,1</param>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.MoveWindowTitleToScreenPercent(System.String,UnityEngine.Vector2)">
+            <summary>
+            Move a window to the screen location, centering on it's title
+            </summary>
+            <param name="viewWindowId"></param>
+            <param name="centerOnScreenPixelLocation">pixel location on the game area screen where the window should be centered. Bottom Left is 0,0</param>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.MoveWindowTitleToScreenPixelLocation(System.String,UnityEngine.Vector2)">
+            <summary>
+            Move a window to the screen location, centering on it's title
+            </summary>
+            <param name="viewWindowId"></param>
+            <param name="centerOnScreenPixelLocation">pixel location on the game area screen where the window should be centered. Bottom Left is 0,0</param>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.ClosePersistentView(System.String)">
+            <summary>
+            Hide a view from the user
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.TryToClosePersistentView(System.String)">
+            <summary>
+            Try to Hide a view from the user
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.TryToCloseWindow(System.String)">
+            <summary>
+            Try to Hide a view from the user
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.TryToCloseWindow(Simple.Ux.Controllers.Unity.ViewController)">
+            <summary>
+            Try to Hide a view from the user
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.CloseWindow(System.String)">
+            <summary>
+            Hide a view from the user
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.CloseWindow(Simple.Ux.Controllers.Unity.ViewController)">
+            <summary>
+            Hide a view from the user
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.CloseAllWindows(System.Boolean)">
+            <summary>
+            Close all open views
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.CloseAllEditorModeWindows">
+            <summary>
+            Close all open views
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager._displayView(Simple.Ux.Data.View,System.Boolean,System.Boolean)">
+            <summary>
+            Display a view to the user
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.InitializeNewWindowForView(Simple.Ux.Data.View,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Initialize a new window for the given view data
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.StopTrackingWindow(System.String)">
+            <summary>
+            Remove a window from this manager's tracking.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.StopTrackingWindow(Simple.Ux.Controllers.Unity.ViewController)">
+            <summary>
+            Remove a window from this manager's tracking.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.StopTrackingPersistentViewWindow(Simple.Ux.Data.View)">
+            <summary>
+            Remove a window from this manager's tracking.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.StopTrackingPersistentViewWindow(System.String)">
+            <summary>
+            Remove a window from this manager's tracking.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.StopTrackingAllWindows(System.Boolean)">
+            <summary>
+            Close all open views
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Managers.Unity.SimpleUxViewWindowsManager.StopTrackingAllEditorModeWindows">
+            <summary>
+            Close all open views
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Utility.Unity.VectorUtilities">
+            <summary>
+            TODO: make this it's own library one day
+            Extensions for vector3s in unity
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.X_0_Y(UnityEngine.Vector2)">
+            <summary>
+            Quick inline for turning vec2 into vec3 with Y = 0;
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.X_Y_0(UnityEngine.Vector2)">
+            <summary>
+            Quick inline for turning vec2 into vec3 with z = 0;
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.X_0_Y(UnityEngine.Vector2Int)">
+            <summary>
+            Quick inline for turning vec2 into vec3 with Y = 0;
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.X_Y_0(UnityEngine.Vector2Int)">
+            <summary>
+            Quick inline for turning vec2 into vec3 with z = 0;
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.X_Z(UnityEngine.Vector3Int)">
+            <summary>
+            Quick inline for turning vec3 into vec2 using x,z;
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.X_Y(UnityEngine.Vector3Int)">
+            <summary>
+            Quick inline for turning vec3 into vec2 using x,y
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.X_Z(UnityEngine.Vector3)">
+            <summary>
+            Quick inline for turning vec3 into vec2 using x,z;
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.X_Y(UnityEngine.Vector3)">
+            <summary>
+            Quick inline for turning vec3 into vec2 using x,y
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.ReplaceX(UnityEngine.Vector3,System.Single)">
+            <summary>
+            replace the x value and return for chaining
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.Snap(UnityEngine.Vector3)">
+            <summary>
+            snap to int using floor
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.AsPersise(UnityEngine.Vector3Int)">
+            <summary>
+            convert int to persise float based vector
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.Snap(UnityEngine.Vector2)">
+            <summary>
+            snap to int using floor
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.AsPersise(UnityEngine.Vector2Int)">
+            <summary>
+            convert int to persise float based vector
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.ReplaceY(UnityEngine.Vector3Int,System.Int32)">
+            <summary>
+            replace the y value and return for chaining
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.ReplaceY(UnityEngine.Vector3,System.Single)">
+            <summary>
+            replace the y value and return for chaining
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.ReplaceX(UnityEngine.Vector2,System.Single)">
+            <summary>
+            replace the x value and return for chaining
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.ReplaceY(UnityEngine.Vector2,System.Single)">
+            <summary>
+            replace the y value and return for chaining
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.ReplaceZ(UnityEngine.Vector3,System.Single)">
+            <summary>
+            replace the z value and return for chaining
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.CubeVector(System.Single)">
+            <summary>
+            Get a vector3 with all values set to the provided one
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.CubeVector(System.Int32)">
+            <summary>
+            Get a vector3 with all values set to the provided one
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.SquareVector(System.Single)">
+            <summary>
+            Get a vector2 with all values set to the provided one
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.SquareVector(System.Int32)">
+            <summary>
+            Get a vector2 with all values set to the provided one
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.Plus(UnityEngine.Vector2Int,UnityEngine.Vector2Int)">
+            <summary>
+            add each element of a vector2
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.Plus(UnityEngine.Vector3Int,UnityEngine.Vector3Int)">
+            <summary>
+            add each element of a vector3
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.Times(UnityEngine.Vector2Int,UnityEngine.Vector2Int)">
+            <summary>
+            Multiply each element of a vector2
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.Times(UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            Multiply each element of a vector2
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.DividedBy(UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            Divide each element of a vector2
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.DividedBy(UnityEngine.Vector2Int,UnityEngine.Vector2Int)">
+            <summary>
+            Divide each element of a vector2
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.DividedBy(UnityEngine.Vector2,UnityEngine.Vector2)">
+            <summary>
+            Divide each element of a vector2
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.Until(UnityEngine.Vector3Int,UnityEngine.Vector3Int,System.Action{UnityEngine.Vector3Int})">
+            <summary>
+            Do something with every coordinate from start until the end. (last is inclusive)
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.Until(UnityEngine.Vector3Int,UnityEngine.Vector3Int,UnityEngine.Vector3Int,System.Action{UnityEngine.Vector3Int},System.Func{System.Int32,System.Int32,System.Boolean}[])">
+            <summary>
+            Do something with every coordinate from start until the end. (last is inclusive)
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.Until(UnityEngine.Vector2Int,UnityEngine.Vector2Int,UnityEngine.Vector2Int,System.Action{UnityEngine.Vector2Int},System.Func{System.Int32,System.Int32,System.Boolean}[])">
+            <summary>
+            Do something with every coordinate from start until the end. (last is inclusive)
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.Until(UnityEngine.Vector2Int,UnityEngine.Vector2Int,System.Action{UnityEngine.Vector2Int})">
+            <summary>
+            Do something with every coordinate from start until the end. (last is inclusive)
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.SelectUntil``1(UnityEngine.Vector2Int,UnityEngine.Vector2Int,UnityEngine.Vector2Int,System.Func{UnityEngine.Vector2Int,``0},System.Func{System.Int32,System.Int32,System.Boolean}[])">
+            <summary>
+            Do something with every coordinate from start until the end. (last is inclusive)
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.SelectUntil(UnityEngine.Vector2Int,UnityEngine.Vector2Int)">
+            <summary>
+            Do something with every coordinate from start until the end. (last is inclusive)
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.SelectUntil(UnityEngine.Vector2Int,UnityEngine.Vector2Int,UnityEngine.Vector2Int,System.Func{System.Int32,System.Int32,System.Boolean}[])">
+            <summary>
+            Do something with every coordinate from start until the end. (last is inclusive)
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Utility.Unity.VectorUtilities.SelectUntil``1(UnityEngine.Vector2Int,UnityEngine.Vector2Int,System.Func{UnityEngine.Vector2Int,``0})">
+            <summary>
+            Do something with every coordinate from start until the end. (last is inclusive)
+            </summary>
+        </member>
+    </members>
+</doc>

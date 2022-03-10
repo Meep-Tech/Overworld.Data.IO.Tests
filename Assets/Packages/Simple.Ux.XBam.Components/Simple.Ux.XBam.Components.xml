@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Simple.Ux.XBam.Components</name>
+    </assembly>
+    <members>
+        <member name="T:Simple.Ux.XBam.Components.IHasSimpleUxComponentEditMenu">
+            <summary>
+            If this component has a built in simple ux menu that can edit it's values.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.XBam.Components.IHasSimpleUxComponentEditMenu.BuildSimpleUxMenu(Simple.Ux.Data.ViewBuilder,Meep.Tech.Data.IComponent.IBuilderFactory)">
+            <summary>
+            logic to build the editor ux from an empty builder.
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.XBam.Components.IHasSimpleUxComponentEditMenu.GetSimpleUxEditMenu">
+            <summary>
+            Get the base editor UX for this type of component.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.XBam.Components.IHasSimpleUxComponentEditMenu`1">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.XBam.Components.IHasSimpleUxComponentEditMenu`1.Simple#Ux#XBam#Components#IHasSimpleUxComponentEditMenu#BuildSimpleUxMenu(Simple.Ux.Data.ViewBuilder,Meep.Tech.Data.IComponent.IBuilderFactory)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Simple.Ux.XBam.Components.IHasSimpleUxComponentEditMenu`1._updateFromFieldChange(Simple.Ux.Data.View,System.String)">
+            <summary>
+            Update from a ux.
+            </summary>
+            <param name="ux">The ux for this component</param>
+            <param name="updatedFieldKey">(optional) a field that was changed.</param>
+        </member>
+        <member name="T:Simple.Ux.XBam.Components.DisplayInSimpleUxComponentMenuAttribute">
+            <summary>
+            Can be used to show a private/protected component field in the simple ux component menu
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.XBam.Components.DisplayInSimpleUxComponentMenuAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+            Used to mark a private field in a component as "should be shown" in the editor.
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.XBam.Components.IgnoreForSimpleUxComponentMenuAttribute">
+            <summary>
+            Hide a field  with a public get and any setter from the simple ux component menu
+            </summary>
+        </member>
+    </members>
+</doc>

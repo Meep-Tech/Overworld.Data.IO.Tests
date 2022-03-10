@@ -1,0 +1,1744 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Overworld.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Overworld.Data.Character">
+            <summary>
+            A player controlled entity
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Character.Type">
+            <summary>
+            The base archetype for player character entities
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Character.Type.DefaultTestParams">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Overworld.Data.Character.Type.DefaultModelComponentCtors">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Character.Type.Make(System.String)">
+            <summary>
+            Make a new character with just a name.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Character.UniqueName">
+            <summary>
+            The unique, human readable name of a character. Like their username
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Character.#ctor(Meep.Tech.Data.IBuilder{Overworld.Data.Entity})">
+            <summary>
+            X Bam Builder
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="M:Overworld.Data.Character.#ctor(System.String,System.String)">
+            <summary>
+            Make a new character
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Animation">
+            <summary>
+            A sprite animation.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Animation.Type">
+            <summary>
+            Types of entity animation.
+            These can be built by files
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.Type.AllowInitializationsAfterLoaderFinalization">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.Type.Name">
+            <summary>
+            The animation's unique name
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.Type.Version">
+            <summary>
+            The version of this animation.
+            If this is different then the name of the compiled *.anim file then it will be recompiles.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.Type.Namespace">
+            <summary>
+            The animation's namespace
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.Type.Clip">
+            <summary>
+            The unity animation clip that is played
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.Type.Tags">
+            <summary>
+            The tags that apply to this sprite animation
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.Type.Dimensions">
+            <summary>
+            The dimensions of the sprite animation in px
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.Type.IsBuildFromAnAssembly">
+            <summary>
+            If this animation type was built by an assembly/class rather than though the auto-loader
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.Type.ResourceKey">
+            <summary>
+            The key for this resource
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.Type.PackageKey">
+            <summary>
+            The package name that this came from.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.Type.DefaultPackageKey">
+            <summary>
+            The package name that this came from.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Animation.Type.#ctor(Meep.Tech.Data.Archetype{Overworld.Data.Animation,Overworld.Data.Animation.Type}.Identity)">
+            <summary>
+            XBAM Base Constructors
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Animation.Type.#ctor(System.String,Newtonsoft.Json.Linq.JObject,UnityEngine.AnimationClip,System.Collections.Generic.IEnumerable{Overworld.Data.Tag})">
+            <summary>
+            Import constructor
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Animation.Type.GenerateConfig">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Overworld.Data.Animation.Tags">
+            <summary>
+            A collection of tags that can apply to an animation
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.CustomTags">
+            <summary>
+            Custom Entity-Setable tags for this animation. 
+            This allows you to customize the tags of an animation on an entity.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Animation.CustomTagWeights">
+            <summary>
+            Custom Entity-Setable weights for each tag applied to this animation.
+            This allows you to customize the weight of different tags in animations for different entities.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entity">
+            <summary>
+            An in game thing that can move around.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entity.Animation">
+            <summary>
+            A sprite animation.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entity.Animation.Type">
+            <summary>
+            Types of entity animation.
+            These can be built by files
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Animation.Type.Layer">
+            <summary>
+            The layer this animation acts on.
+            Defults to 0 (BaseBody)
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Animation.Type.ShouldScaleToFitEntityByDefault">
+            <summary>
+            The default "scale to fit entity" setting of animations of this type
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Animation.Type.#ctor(Overworld.Data.Entity.Animation.Type.Identity)">
+            <summary>
+            XBAM Base Constructors
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Animation.Type.#ctor(System.String,Newtonsoft.Json.Linq.JObject,UnityEngine.AnimationClip,System.Collections.Generic.IEnumerable{Overworld.Data.Entity.Animation.BuiltInTag})">
+            <summary>
+            Import constructor
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Animation.Type.ConfigureModel(Meep.Tech.Data.IBuilder{Overworld.Data.Animation},Overworld.Data.Animation)">
+            <summary>
+            Build a model from this animation type
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entity.Animation.Type.Identity">
+            <summary>
+            Animation type id
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entity.Animation.Layer">
+            <summary>
+            The layer of the entity an animation applies to
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entity.Animation.BuiltInTag">
+            <summary>
+            Tags used to find entity specific animations
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Animation.BuiltInTag.North">
+            <summary>
+            Indicates North Facing Sprite Animation
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Animation.BuiltInTag.South">
+            <summary>
+            Indicates South Facing Sprite Animation
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Animation.BuiltInTag.East">
+            <summary>
+            Indicates Eastward Facing Sprite Animation
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Animation.BuiltInTag.West">
+            <summary>
+            Indicates Westward Facing Sprite Animation
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Animation.BuiltInTag.Animated">
+            <summary>
+            Represents a sprite that is animated
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Animation.BuiltInTag.Still">
+            <summary>
+            Represents a single framed sprite or A non-moving one
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Animation.BuiltInTag.Move">
+            <summary>
+            Represents a sprite action used to move a number of tiles from your current position.
+            For animation that stay in the same place but have motion, use the "Animated" tag.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Animation.BuiltInTag.Walk">
+            <summary>
+            Represents walking
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Animation.BuiltInTag.Run">
+            <summary>
+            Represents running
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Animation.BuiltInTag.Jump">
+            <summary>
+            Represents jumping
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Animation.BuiltInTag.#ctor(System.String)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Animation.ScaleToFitEntity">
+            <summary>
+            If this animation should scale to fit the entity it's applied to
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entity.Icon">
+            <summary>
+            A still image that's used to represent an entity in some way.
+            Can be used for non-animation sprites.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entity.Icon.Type">
+            <summary>
+            A type of entity icon.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Icon.Type.Sprite">
+            <summary>
+            The in-game sprite this icon type represents
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Icon.Type.ResourceKey">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Icon.Type.PackageKey">
+            <summary>
+            The package name that this came from.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Icon.Type.DefaultPackageKey">
+            <summary>
+            The package name that this came from.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Icon.Type.Description">
+            <summary>
+            The tile height
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Icon.Type.DefaultTags">
+            <summary>
+            Default tags for this icon type.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Icon.Type._DefaultTags">
+            <summary> The backing field used to initialize and override DefaultTags </summary>*
+        </member>
+        <member name="M:Overworld.Data.Entity.Icon.Type.#ctor(System.String,System.String,System.String,Meep.Tech.Data.Universe)">
+            <summary>
+            Can be used to extend this to a new, non-templateable type.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Icon.Type.#ctor(System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject,System.Collections.Generic.Dictionary{System.String,System.Object},Meep.Tech.Data.Universe)">
+            <summary>
+            Used to make new tiles via import.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Icon.Type.GenerateConfig">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Overworld.Data.Entity.Icon.Porter">
+            <summary>
+            Imports entity icons
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Icon.Porter.SubFolderName">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Icon.Porter.ValidConfigOptionKeys">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Icon.Porter.ValidImportOptionKeys">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Icon.Porter.#ctor(Overworld.Data.User)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Icon.Porter.BuildLooselyFromConfig(Newtonsoft.Json.Linq.JObject,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Icon.Porter.BuildLooselyFromAssets(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Icon.Porter.SerializeArchetypeToModFiles(Overworld.Data.Entity.Icon.Type,System.String)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Overworld.Data.Entity.Type">
+            <summary>
+            A type of entity
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Type.BuildInModelComponentCtors">
+            <summary>
+            Built in model components for all entities
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Type.ResourceKey">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Type.Description">
+            <summary>
+            The tile height
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Type.PackageKey">
+            <summary>
+            The package name that this came from.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Type.DefaultPackageKey">
+            <summary>
+            The package name that this came from.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Type.DefaultTags">
+            <summary>
+            Default tags for this entity type.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Type._DefaultTags">
+            <summary> The backing field used to initialize and override DefaultTags </summary>*
+        </member>
+        <member name="P:Overworld.Data.Entity.Type.DefaultModelComponentCtors">
+            <summary>
+            Can be used to add default components via override
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Type._DefaultModelComponentCtors">
+            <summary> The backing field used to initialize and override the initail value of DefaultModelComponentCtors. You can this syntax to override or add to the base initial value: '=> _DefaultModelComponentCtors ??= base.DefaultModelComponentCtors.Append(...' </summary> *
+        </member>
+        <member name="P:Overworld.Data.Entity.Type.InitialComponents">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Type.InitialUnlinkedModelComponentCtors">
+            <summary>
+            Inital components.
+            Overrite DefaultModelComponentCtors instead.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Type.#ctor(System.String,System.String,System.String,Meep.Tech.Data.Universe)">
+            <summary>
+            Can be used to extend this to a new, non-templateable type.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Type.#ctor(System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject,System.Collections.Generic.Dictionary{System.String,System.Object},Meep.Tech.Data.Universe)">
+            <summary>
+            Used to make a new type of entity.
+            Make a copy of this constructor that is protected to allow modification of your archetype via mods,
+            a fully private constructor will prevent people from modding your archetype.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Type.AppendModelComponentConstructors(System.Collections.Generic.Dictionary{System.String,System.Func{Meep.Tech.Data.IBuilder,Meep.Tech.Data.IModel.IComponent}})">
+            <summary>
+            Can be used to initialize extra model component ctors from a json.config.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Type.SetDefaultIconType(Overworld.Data.Entity.Icon.Type)">
+            <summary>
+            Can be used to initialize the default icon of the entity.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Type.GenerateConfig">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Type.AddSpriteDisplayOptionsFromConfig(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Get sprite display options for an entity from a config.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Type.AddInitialModelComponentTypeConstructorsFromConfig(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Add initial model component ctors from the config.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entity.Type.Identity">
+            <summary>
+            Ids for entity types
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entity.BuiltInTag">
+            <summary>
+            Built in entity tags.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.BuiltInTag.#ctor(System.String)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Id">
+            <summary>
+            Unique entity id
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Name">
+            <summary>
+            The display name of an entity
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.#ctor(Meep.Tech.Data.IBuilder{Overworld.Data.Entity})">
+            <summary>
+            X Bam Builder
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="M:Overworld.Data.Entity.#ctor(System.String,System.String)">
+            <summary>
+            Make a new entity
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entity.Porter">
+            <summary>
+            ised to inport and expoert entities to and from mod folders
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Porter.EntityExtraInitialModelComponentsConfigOptionKey">
+            <summary>
+            Key for intial model components added to an entity from a config.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Porter.EntityExtraInitialArchetypeComponentsConfigOptionKey">
+            <summary>
+            Key for intial archetype components added to an entity from a config.
+            TODO: implement
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Porter.EntityBaseArchetypeConfigOptionKey">
+            <summary>
+            An archetype to use instead of the default.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Porter.DefaultSpriteIconConfigOptionKey">
+            <summary>
+            The default sprite for an entity
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Porter.SpriteIconsConfigOptionKey">
+            <summary>
+            The default sprite for an entity
+            TOOD: implement
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Porter.ExtraSpriteDisplayOptionsConfigOptionKey">
+            <summary>
+            The default sprite for an entity
+            TOOD: implement
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Porter.SpriteAnimationsConfigOptionKey">
+            <summary>
+            The default sprite for an entity
+            TOOD: implement
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Porter.SpawnLocationImportOptionKey">
+            <summary>
+            Can be used to set the spawn location
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entity.Porter.AddBasicPhysicsImportOptionKey">
+            <summary>
+            Can be used to add basic physics
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Porter.SubFolderName">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Porter.#ctor(Overworld.Data.User)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Porter.ValidConfigOptionKeys">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Overworld.Data.Entity.Porter.ValidImportOptionKeys">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Porter.BuildLooselyFromConfig(Newtonsoft.Json.Linq.JObject,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Porter.BuildLooselyFromAssets(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Porter.BuildArchetypeFromCompiledData(System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject,System.Collections.Generic.Dictionary{System.String,System.Object},Meep.Tech.Data.Universe)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Entity.Porter.SerializeArchetypeToModFiles(Overworld.Data.Entity.Type,System.String)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Overworld.Data.ITaggable">
+            <summary>
+            Represents an archetype that's taggable, and has it's own set of default tags.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.ITaggable.DefaultTags">
+            <summary>
+            The default set of tags that should be applied to all models produced by this archetype
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Tile">
+            <summary>
+            Represents a tile placed on a tileboard.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Tile.Type">
+            <summary>
+            Archetypes for tiles.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Type.AllowInitializationsAfterLoaderFinalization">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Type.DefaultPackageKey">
+            <summary>
+            The default package name for archetyps of this type
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Type.ResourceKey">
+            <summary>
+            The unique resource key of this type
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Type.BackgroundImageHashKey">
+            <summary>
+            The hash key of the image
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Type.PackageKey">
+            <summary>
+            The package name that this came from.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Type.DefaultBackground">
+            <summary>
+            The background tile this tile is using
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Type.DefaultHeight">
+            <summary>
+            The tile height
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Type.Description">
+            <summary>
+            The tile height
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Type.UseDefaultBackgroundAsInWorldTileImage">
+            <summary>
+            If the default background should be used as the tile image in world.
+            If false, the DefaultBackground image is just for use in the editor ui.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Type.LinkArchetypeToTileDataOnSet">
+            <summary>
+            If this tile archetype should link itself to a tile when used to make that tile in the world
+            If you don't want this archetype set as the tile's 'type' then set this to false.
+            This is used for Background Archetypes for tiles.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Tile.Type._ignoreDuringModReSerialization">
+            <summary>
+            This is used to ignore the type during re-serialization, because another type may already handle importing it via he same resource key.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Type.DefaultTags">
+            <summary>
+            Default tags for this tile type.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Type._DefaultTags">
+            <summary> The backing field used to initialize and override DefaultTags </summary>*
+        </member>
+        <member name="M:Overworld.Data.Tile.Type.#ctor(System.String,System.String,System.String,Meep.Tech.Data.Universe)">
+            <summary>
+            Can be used to extend this to a new, non-templateable type.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Tile.Type.#ctor(System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject,System.Collections.Generic.Dictionary{System.String,System.Object},Meep.Tech.Data.Universe)">
+            <summary>
+            Used to make new tiles via import.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Tile.Type.GenerateConfig">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Archetype">
+            <summary>
+            The archetype originally used to make this tile.
+            A tile can be modified around it, and then reset to it as well.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Background">
+            <summary>
+            The background tile this tile is using
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Height">
+            <summary>
+            The tile height
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Tile._backgroundOverride">
+            <summary>
+            can be used to reference a type who's background should be used instead.
+            This is to avoid duplicating tiles.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Tile.ResetAndUpdateForCurrentArchetype">
+            <summary>
+            Resets this tile to it's current archetype's settings, and updates any changed settings.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Tile.OverrideBackgroundTo(Overworld.Data.Tile.Type)">
+            <summary>
+            Override the background to another type's background image
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Tile._applyArchetype(Overworld.Data.Tile.Type)">
+            <summary>
+            Initialize this for a new archetype
+            </summary>
+            <param name="archetype"></param>
+        </member>
+        <member name="T:Overworld.Data.Tile.Porter">
+            <summary>
+            Used to import and export tile types.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Tile.Porter.BackgroundImageImportMode">
+            <summary>
+            The config specified import mode
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Porter.SubFolderName">
+            <summary>
+            The package name that this came from.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Porter.ValidConfigOptionKeys">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Overworld.Data.Tile.Porter.ValidImportOptionKeys">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="F:Overworld.Data.Tile.Porter.ProvidedSheetDimensionsOption">
+            <summary>
+            option for dimensions in tiles instead of pixels during import.
+            Takes an int.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Tile.Porter.InPlaceTileCallbackOption">
+            <summary>
+            Takes an Action[Vector2Int, UnityEngine.Tilemaps.Tile] with the params:
+              tile location in it's tilemap
+              the generated unity tile
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Tile.Porter.TileHeightConfigKey">
+            <summary>
+            Key for the tile height
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Tile.Porter.SheetSizeInTilesConfigKey">
+            <summary>
+            Key used to pass in how large the tile sheet is in tiles
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Tile.Porter.UseDefaultBackgroundAsInWorldTileImageConfigKey">
+            <summary>
+            Key used to pass in how large the tile sheet is in tiles
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Tile.Porter.ImportModeConfigKey">
+            <summary>
+            The config key for the mode used to import the image.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Tile.Porter.#ctor(Overworld.Data.User)">
+            <summary>
+            Make a new tile importer. This is made at startup.
+            TODO: these should be singletons probably.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Tile.Porter.BuildLooselyFromConfig(Newtonsoft.Json.Linq.JObject,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Tile.Porter.BuildLooselyFromAssets(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:Overworld.Data.Tile.Porter.SerializeArchetypeToModFiles(Overworld.Data.Tile.Type,System.String)">
+            <summary>
+            Saves each tile as it's own image with a config for import
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Tile.Porter._importUnityTilesFrom(UnityEngine.Texture2D,System.Nullable{System.Int32},System.Boolean,System.Nullable{UnityEngine.Vector2})">
+            <summary>
+            Import a collection of tiles from an image
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Tile.Porter._importUnityTilesFrom(System.String,System.Nullable{System.Int32},System.Boolean,System.Nullable{UnityEngine.Vector2})">
+            <summary>
+            Import a collection of tiles from an image location
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.TileExtensions">
+            <summary>
+            Extensions for Unity Tiles
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.TileExtensions.GetTileHash(UnityEngine.Tilemaps.Tile)">
+            <summary>
+            Gets a tile's hash code from it's image
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Tag">
+            <summary>
+            Tags used to find things of many kins
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Tag.JsonConverter">
+            <summary>
+            Used to convert tags to strings and back by default
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Tag.#ctor(System.String)">
+            <summary>
+             Used to easily make a new tag. Tags must be unique!
+             </summary>
+        </member>
+        <member name="T:Overworld.Data.DateAndTime">
+            <summary>
+            A date and time in the game world.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.DateAndTime.Date">
+            <summary>
+            The numerical date in the game world.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.DateAndTime.Time">
+            <summary>
+            The numeric time in the game world.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.DateAndTime.#ctor(System.Int32,System.Single)">
+            <summary>
+            Make a date with an optional time
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.DateAndTime.Local">
+            <summary>
+            The local date and time of the current world
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.CardinalDirectionExtensions.TurnClockwise(Overworld.Data.World.CardinalDirection)">
+            <summary>
+            Get the direction if you turn clockwise 90 degrees from this one.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.CardinalDirectionExtensions.TurnCounterClockwise(Overworld.Data.World.CardinalDirection)">
+            <summary>
+            Get the direction if you turn counter-clockwise 90 degrees from this one.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.CardinalDirectionExtensions.TurnClockwise(Overworld.Data.World.CardinalCorner)">
+            <summary>
+            Get the direction if you turn clockwise 90 degrees from this one.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.CardinalDirectionExtensions.TurnCounterClockwise(Overworld.Data.World.CardinalCorner)">
+            <summary>
+            Get the direction if you turn counter-clockwise 90 degrees from this one.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entities.Components.BasicPhysicalStats">
+            <summary>
+            Some basic physical stats for all characters
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.BasicPhysicalStats.Height">
+            <summary>
+            Height, in "Tiles" (1.75 is average)
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.BasicPhysicalStats.Width">
+            <summary>
+            Width, in "Tiles" (0.75 is average)
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.BasicPhysicalStats.Weight">
+            <summary>
+            Weight in "Units", used for physics and some other things.
+            175u is average.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entities.Components.BasicPhysicalStats.OnWidthChangeFuncs">
+            <summary>
+            Add an Func to be executed when the width is changed.
+            Params:
+            old width,
+            new width.
+            Returns:
+            extra width to add.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entities.Components.BasicPhysicalStats.OnWeightChangeFuncs">
+            <summary>
+            Add an Func to be executed when the weight is changed.
+            Params:
+            old weight,
+            new weight.
+            Returns:
+            extra weight to add.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.Entities.Components.BasicPhysicalStats.OnHeightChangeFuncs">
+            <summary>
+            Add an Func to be executed when the height is changed.
+            Params:
+            old height,
+            new height.
+            Returns:
+            extra height 
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entities.Components.Location">
+            <summary>
+            Keeps track of an entity location on the map.
+            Modifying a value here will move an entity in the world to the new location on the next frame update.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entities.Components.SimplePhysics">
+            <summary>
+            When attached to an entity in world, it means this entity will spawn at this location when the world starts.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SimplePhysics.Parent">
+            <summary>
+            The parent of this component
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SimplePhysics.ApplyGravity">
+            <summary>
+            If gravity should be applied to this Entity.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SimplePhysics.IsSolid">
+            <summary>
+            If this entity is solid.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SimplePhysics.IsPushable">
+            <summary>
+            If this entity can be pushed around by other entities
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entities.Components.SimplePhysics.Meep#Tech#Data#IModel#Configure(Meep.Tech.Data.IBuilder)">
+            <summary>
+            Default configuration
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entities.Components.SimpleSpawnLocation">
+            <summary>
+            When attached to an entity in world, it means this entity will spawn at this location when the world starts.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SimpleSpawnLocation.X">
+            <summary>
+            E/W location in world to spawn at
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SimpleSpawnLocation.Y">
+            <summary>
+            N/S location in world to spawn at
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SimpleSpawnLocation.Height">
+            <summary>
+            Height in world to spawn at
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SimpleSpawnLocation.RespawnWhenDestroyed">
+            <summary>
+            If this entity should resapwn when destroyed/when it falls off the world.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entities.Components.SpriteDisplayOptions">
+            <summary>
+            A set of display options an entity sprite can choose from.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SpriteDisplayOptions.IconPreferenceSearchTag">
+            <summary>
+            Tag used to put single frame icon-based results first in searches over animated results.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SpriteDisplayOptions.DefaultDisplayEntryTag">
+            <summary>
+            Tag used to identify the default icons and animations used by this entity.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SpriteDisplayOptions.DefaultIconType">
+            <summary>
+            The default icon used for this entity.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SpriteDisplayOptions.AnimationTypes">
+            <summary>
+            Availible sprite animations by tag
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SpriteDisplayOptions.IconTypes">
+            <summary>
+            Availible entity icons
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SpriteDisplayOptions.AllDisplayOptionTypes">
+            <summary>
+            Availible entity icons and animations combined, by tag
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entities.Components.SpriteDisplayOptions.#ctor">
+            <summary>
+            Make a new default/empty set of sprite display options quickly
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entities.Components.SpriteDisplayOptions.Add(Overworld.Data.IEntityDisplayableSprite.IArchetype,System.Collections.Generic.IEnumerable{Overworld.Data.Tag})">
+            <summary>
+            Add a new displayable item (like an icon or animation) to this psrite manager.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entities.Components.SpriteDisplayOptions.Remove(Overworld.Data.IEntityDisplayableSprite.IArchetype)">
+            <summary>
+            Remove an entry type
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entities.Components.SpriteManager">
+            <summary>
+            Manages sprites and helps retrieve desired sprite animations and icons.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SpriteManager.DefaultIcon">
+            <summary>
+            The default icon used for this entity.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SpriteManager.Animations">
+            <summary>
+            Availible sprite animations by tag
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SpriteManager.Icons">
+            <summary>
+            Availible entity icons
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SpriteManager.AllDisplayOptions">
+            <summary>
+            Availible entity icons and animations combined, by tag
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entities.Components.SpriteManager.AllDisplayOptionsById">
+            <summary>
+            Get all display options by their unique ids.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entities.Components.SpriteManager.#ctor(Overworld.Data.Entities.Components.SpriteDisplayOptions)">
+            <summary>
+            Make a new default/empty sprite manager based on a set of options.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entities.Components.SpriteManager.Add(Overworld.Data.IEntityDisplayableSprite,System.Collections.Generic.IEnumerable{Overworld.Data.Tag})">
+            <summary>
+            Add a new displayable item (like an icon or animation) to this psrite manager.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Entities.Components.SpriteManager.Remove(System.String)">
+            <summary>
+            Remove an entry by it's unique id.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Entites.Components.DoEveryFrameHook">
+            <summary>
+            A Hook to execute something every frame
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entites.Components.DoEveryFrameHook.SimpleUxMenuTitle">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Overworld.Data.Entites.Components.EntityHook`1">
+            <summary>
+            A type of component that uses a hook to execute some code from the perspective of an entity.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entites.Components.EntityHook`1.SimpleUxMenuTitle">
+            <summary>
+            The title used for this component in it's simpleux menu
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entites.Components.EntityHook`1.Executeables">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Overworld.Data.Entites.Components.EntityInteractionHook">
+            <summary>
+            A component to place an execution hook on an entity interaction.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entites.Components.EntityInteractionHook.SimpleUxMenuTitle">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Overworld.Data.Entites.Components.EntityKeyPressHook">
+            <summary>
+            This type of hook is exexuted on a key press.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entites.Components.EntityKeyPressHook.SimpleUxMenuTitle">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Overworld.Data.Entites.Components.EntityOnCharacterJoinHook">
+            <summary>
+            A hook that's executed for the joining charachter when they join the world.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entites.Components.EntityOnCharacterJoinHook.SimpleUxMenuTitle">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Overworld.Data.Entites.Components.EntityOnStartHook">
+            <summary>
+            A hook executred on the world being started by the server.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.Entites.Components.EntityOnStartHook.SimpleUxMenuTitle">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Overworld.Data.Entites.Components.IEntityHookComponent">
+            <summary>
+            A component that can be added to an entity that executes code on a trigger.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.IDefaultEntityComponent`1">
+            <summary>
+            An interface for helping to make default entity components.
+            Entity components don't explicityly need this interface.
+            </summary>
+            <typeparam name="TComponentBase">Only one component of each base type can be added to a model.</typeparam>
+        </member>
+        <member name="T:Overworld.Data.IDefaultToggleableEntityComponent`1">
+            <summary>
+            An interface for helping to make default entity components.
+            Entity components don't explicityly need this interface.
+            This one is toggleable.
+            </summary>
+            <typeparam name="TComponentBase">Only one component of each base type can be added to a model.</typeparam>
+        </member>
+        <member name="M:Overworld.Data.EntityComponentExtensionMethods.ToggleEnabled``1(``0,System.Nullable{System.Boolean})">
+            <summary>
+            Toggle if this component is enabled or disabled.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.IToggleableComponent">
+            <summary>
+            A component that can be added to an entity.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.IToggleableComponent.IType">
+            <summary>
+            There can only be one component per type attached to an entity.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.IToggleableComponent.IsEnabled">
+            <summary>
+            If this component is enabled.
+            Also used to enable and disable.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.IToggleableComponent.ToggleEnabled(System.Nullable{System.Boolean})">
+            <summary>
+            Toggle if this component is enabled or disabled.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.IToggleableComponent.OnDisabled">
+            <summary>
+            Callback for on-deacivated/disabled
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.IToggleableComponent.OnEnabled">
+            <summary>
+            Callback for on-acivated/enabled
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Executeable">
+            <summary>
+            An item that can be added to a component signifying logic that can be executed.
+            Currently just OWS scripts.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.Executeable.Type">
+            <summary>
+            A type of executable, setable in the editor.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.Executeable.Type.#ctor(Meep.Tech.Data.Archetype.Identity)">
+            <summary>
+            For making new types of executables.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Overworld.Data.Executeable.Execute">
+            <summary>
+            Execute this with the internal program and context.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.IEntityDisplayableSprite">
+            <summary>
+            A type of model that represents an entity sprite icon, animation, or some kind of display state that can be used to represent and entity though it's sprite.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.IEntityDisplayableSprite.IArchetype">
+            <summary>
+            An archetype that produces an IEntityDisplayableSprite
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.IEntityDisplayableSprite.IArchetype.Make">
+            <summary>
+            Make the default model
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.TileBoard">
+            <summary>
+            A collection of tiles for a board.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.TileBoard.PitDepth">
+            <summary>
+            The height/depth for tiles that are just bottomless pits/nothing/etc.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.TileBoard.Dimensions">
+            <summary>
+            The dimensions of the board, in tiles.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.TileBoard.Bounds">
+            <summary>
+            The tile board boundaries
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.TileBoard.RequiredTileTypes">
+            <summary>
+            Required tile archetypes needed to load this board.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.TileBoard._tiles">
+            <summary>
+            The raw tile data for this board
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.TileBoard.Item(UnityEngine.Vector2Int)">
+            <summary>
+            Get a tile via world location from above
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.TileBoard.Item(System.Int32,System.Int32)">
+            <summary>
+            Get a tile via world location from above
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.TileBoard.#ctor(UnityEngine.Vector2Int)">
+            <summary>
+            Create a new tileboard of the given size.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.User.UniqueName">
+            <summary>
+            The unique, human readable name of a User. The username
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.World">
+            <summary>
+            A Game world, consisting of multuiple tile boards
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.World.CardinalDirection">
+            <summary>
+            The 4 cardinal directions.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.World.CardinalCorner">
+            <summary>
+            The 4 cardinal corner directions.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.World.Origin">
+            <summary>
+            The world origin of tileboards in (XZ) space
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.World.CardinalOffsets">
+            <summary>
+            The 4 cardinal directions offsets
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.World.Options">
+            <summary>
+            The owner-set options for this world.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.World.Entities">
+            <summary>
+            All of the entities in the current world by id
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.World.Boards">
+            <summary>
+            The editor specific data.
+            This should be lazy loaded when the editor is opened for a world.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.World.Bounds">
+            <summary>
+            The world boundaries
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.World.Settings">
+            <summary>
+            creator/owner specified settings for a world
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.World.Settings.TileWidthInPixels">
+            <summary>
+            The witdth of a tile in pixesls in this world
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.World.Settings.AllowDragging">
+            <summary>
+            Allow players to drag the screen in this world.
+            Always enabled in editor mode.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.World.Settings.Dimensions">
+            <summary>
+            The dimensions of the world, in tiles.
+            </summary>
+        </member>
+        <member name="P:Overworld.Data.World.Settings.ZoomLimit">
+            <summary>
+            The zoom in and out limits for the in-game camera.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.IO.ImageImportStringType">
+            <summary>
+            Types of image import string formats.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.IO.ImageImportStringType.LocalAbsolute">
+            <summary>
+            The file string is absolute in the local filesystem
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.IO.ImageImportStringType.LocalRelative">
+            <summary>
+            The file string is relative to the config file in the local filesystem
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.IO.ImageImportStringType.Http">
+            <summary>
+            The file string is an http location on the net.
+            </summary>
+        </member>
+        <member name="T:Overworld.Data.IO.PorterExtensions">
+            <summary>
+            Extra values and functions for Archetype Porters
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.IO.PorterExtensions.DefaultImageFileLocationConfigOptionKey">
+            <summary>
+            Json config key for the image file to use for this icon.
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.IO.PorterExtensions.PixelsPerTileConfigKey">
+            <summary>
+            json config Key for the tile diameter in pixels per tile for size calculation 
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.IO.PorterExtensions.PixelsPerTileImportOptionKey">
+            <summary>
+            import options Key for the tile diameter in pixels per tile for size calculation 
+            </summary>
+        </member>
+        <member name="F:Overworld.Data.IO.PorterExtensions.ValidImageExtensions">
+            <summary>
+            Valid image extensions
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.IO.PorterExtensions.GetDefaultImageFromAssets(Meep.Tech.Data.IO.ArchetypePorter,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.Dictionary{System.String,System.Object},Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Helper to the default image from the assets based on the config, options, and valid image extension values.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.IO.PorterExtensions.IsValidImageImportString(Meep.Tech.Data.IO.ArchetypePorter,System.String,System.Nullable{Overworld.Data.IO.ImageImportStringType}@)">
+            <summary>
+            Check if an image import string is valid
+            </summary>
+            <param name="imageFileLocationString"></param>
+            <param name="importStringType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Overworld.Data.IO.PorterExtensions.ExpandImageImportString(Meep.Tech.Data.IO.ArchetypePorter,System.String,System.String,System.Nullable{Overworld.Data.IO.ImageImportStringType})">
+            <summary>
+            Expad an image import string to a full file location.
+            </summary>
+        </member>
+        <member name="M:Overworld.Data.IO.PorterExtensions.GetSpriteFromImageImportString(Meep.Tech.Data.IO.ArchetypePorter,System.String,System.String,System.Nullable{Overworld.Data.IO.ImageImportStringType},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Gets a local file location for a given image import string.
+            </summary>
+            <param name="imageFileLocationString">The image path</param>
+            <param name="accessedFromFolder">The folder this is centered on, in case it's local.</param>
+        </member>
+        <member name="M:Overworld.Data.IO.PorterExtensions.GetTextureFromHttpImportString(Meep.Tech.Data.IO.ArchetypePorter,System.String)">
+            <summary>
+            Get a unity texture 2d from an import string of type http.
+            </summary>
+        </member>
+        <member name="M:Overworld.Utility.Extensions.ToDisplayCase(System.String)">
+            <summary>
+            Make a string from "CamelCase" to "Display Case"
+            </summary>
+        </member>
+        <member name="T:BasicHeightMapTile">
+            <summary>
+            Used to make height map tiles.
+            </summary>
+        </member>
+        <member name="P:BasicHeightMapTile.Types">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:BasicHeightMapTile.TypesByHeight">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:BasicHeightMapTile.UseDefaultBackgroundAsInWorldTileImage">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:BasicHeightMapTile.LinkArchetypeToTileDataOnSet">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:BasicHeightMapTile.#ctor(System.Single,UnityEngine.Tilemaps.Tile)">
+            <summary>
+            Make a base height tile for a new height value.
+            This will throw if you try to create type for a height that already has a type.
+            </summary>
+        </member>
+        <member name="T:IReadOnlyTagedCollection`2">
+            <summary>
+            A tagged collection that can only be read, not modified.
+            </summary>
+        </member>
+        <member name="P:IReadOnlyTagedCollection`2.Item(`0)">
+            <summary>
+            Fetch a set of values by tag.
+            </summary>
+        </member>
+        <member name="P:IReadOnlyTagedCollection`2.Item(`1)">
+            <summary>
+            Fetch all the tags for a given value
+            </summary>
+        </member>
+        <member name="P:IReadOnlyTagedCollection`2.Tags">
+            <summary>
+            All distinct tags
+            </summary>
+        </member>
+        <member name="P:IReadOnlyTagedCollection`2.Values">
+            <summary>
+            All distinct values
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.FindBestMatches(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Find the values that match the most tags in order
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.FindBestMatches(`0[])">
+            <summary>
+            Find the values that match the most tags in order
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.FindWeightedMatches(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,System.Int32}})">
+            <summary>
+            Find matches given tags with specified weights
+            The higher the weight, the more wanted the tag
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.FindWeightedMatches(System.Collections.Generic.IEnumerable{`0},System.Int32)">
+            <summary>
+            Find the best matches, taking into account tag order
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.FindWeightedMatches(System.Int32,`0[])">
+            <summary>
+            Find the best matches, taking into account tag order
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.FindWeightedMatches(System.ValueTuple{`0,System.Int32}[])">
+            <summary>
+            Find matches given tags with specified weights
+            The higher the weight, the more wanted the tag
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.FindWeightedMatches(`0[])">
+            <summary>
+            Find the best matches, taking into account tag order
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.FirstWithTagsOrDefault(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Find the first value with the tags, or a default one with the best match
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.FirstWithTagsOrDefault(`0[])">
+            <summary>
+            Find the first value with the tags, or a default one with the best match
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.GetAllSortedByBestMatch(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Find the values that match the most tags
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.GetAllSortedByBestMatch(`0[])">
+            <summary>
+            Find the values that match the most tags
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.GetAllSortedByWeight(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,System.Int32}})">
+            <summary>
+            Find matches given tags with specified weights
+            The higher the weight, the more wanted the tag
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.GetAllSortedByWeight(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Find the best matches, taking into account tag order
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.GetAllSortedByWeight(System.Collections.Generic.IList{`0},System.Int32)">
+            <summary>
+            Find the best matches, taking into account tag order
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.GetAllSortedByWeight(System.Int32,`0[])">
+            <summary>
+            Find the best matches, taking into account tag order
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.GetAllSortedByWeight(System.ValueTuple{`0,System.Int32}[])">
+            <summary>
+            Find matches given tags with specified weights
+            The higher the weight, the more wanted the tag
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.GetAllSortedByWeight(`0[])">
+            <summary>
+            Find the best matches, taking into account tag order
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.SelectBestMatches(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Select the values that match the most tags in order
+            Slower than Find due to the cast
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.SelectBestMatches(`0[])">
+            <summary>
+            Select the values that match the most tags in order
+            Slower than Find due to the cast
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.SelectMatches(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Find the values that match any of the tags, unordered
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.SelectMatches(`0[])">
+            <summary>
+            Find the values that match any of the tags, unordered
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.SelectWeightedMatches(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,System.Int32}})">
+            <summary>
+            Select matches given tags with specified weights
+            The higher the weight, the more wanted the tag
+            Slower than Find due to the cast
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.SelectWeightedMatches(System.Collections.Generic.IEnumerable{`0},System.Int32)">
+            <summary>
+            Select the best matches, taking into account tag order
+            Slower than Find due to the cast
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.SelectWeightedMatches(System.Int32,`0[])">
+            <summary>
+            Select the best matches, taking into account tag order
+            Slower than Find due to the cast
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.SelectWeightedMatches(System.ValueTuple{`0,System.Int32}[])">
+            <summary>
+            Select matches given tags with specified weights
+            The higher the weight, the more wanted the tag
+            Slower than Find due to the cast
+            </summary>
+        </member>
+        <member name="M:IReadOnlyTagedCollection`2.SelectWeightedMatches(`0[])">
+            <summary>
+            Select the best matches, taking into account tag order
+            Slower than Find due to the cast
+            </summary>
+        </member>
+        <member name="T:ITagedCollection`2">
+            <summary>
+            A read/Write tagged colleciton.
+            </summary>
+        </member>
+        <member name="M:ITagedCollection`2.Add(System.Collections.Generic.IEnumerable{`0},`1)">
+            <summary>
+            Add a new value with as many tags as you want
+            </summary>
+        </member>
+        <member name="M:ITagedCollection`2.Add(`1,`0[])">
+            <summary>
+            Add a new value with as many tags as you want
+            </summary>
+        </member>
+        <member name="M:ITagedCollection`2.Remove(`1)">
+            <summary>
+            Remove a value
+            </summary>
+        </member>
+        <member name="M:ITagedCollection`2.RemoveTagsForItem(`1,`0[])">
+            <summary>
+            Remove all of the tag connections to the given value.
+            </summary>
+        </member>
+        <member name="M:ITagedCollection`2.RemoveTagsForItem(System.Collections.Generic.IEnumerable{`0},`1)">
+            <summary>
+            Remove all of the tag connections to the given value.
+            </summary>
+        </member>
+        <member name="M:ITagedCollection`2.RemoveValuesFor(`0)">
+            <summary>
+            Remove all values for the given tag
+            </summary>
+        </member>
+        <member name="T:TagedCollection`2">
+            <summary>
+            A collection of Values indexed by multiple non-unique tags
+            </summary>
+            <typeparam name="TTag">Assumed to have a unique hash code</typeparam>
+            <typeparam name="TValue">The stored values</typeparam>
+        </member>
+        <member name="P:TagedCollection`2.Values">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:TagedCollection`2.Tags">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:TagedCollection`2.Item(`0)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:TagedCollection`2.Item(`1)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.Add(`1,`0[])">
+            <summary>
+            Add a new value with as many tags as you want
+            </summary>
+        </member>
+        <member name="M:TagedCollection`2.Add(System.Collections.Generic.IEnumerable{`0},`1)">
+            <summary>
+            Add a new value with multiple tags
+            </summary>
+        </member>
+        <member name="M:TagedCollection`2.Remove(`1)">
+            <summary>
+            Remove a value
+            </summary>
+        </member>
+        <member name="M:TagedCollection`2.RemoveValuesFor(`0)">
+            <summary>
+            Remove all values for the given tag
+            </summary>
+        </member>
+        <member name="M:TagedCollection`2.RemoveTagsForItem(`1,`0[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.RemoveTagsForItem(System.Collections.Generic.IEnumerable{`0},`1)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.FindWeightedMatches(System.Int32,`0[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.FindWeightedMatches(`0[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.FindWeightedMatches(System.Collections.Generic.IEnumerable{`0},System.Int32)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.FindWeightedMatches(System.ValueTuple{`0,System.Int32}[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.FindWeightedMatches(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,System.Int32}})">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.FindBestMatches(`0[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.FindBestMatches(System.Collections.Generic.IEnumerable{`0})">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.SelectMatches(`0[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.SelectMatches(System.Collections.Generic.IEnumerable{`0})">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.FirstWithTagsOrDefault(`0[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.FirstWithTagsOrDefault(System.Collections.Generic.IEnumerable{`0})">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.SelectWeightedMatches(System.Int32,`0[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.SelectWeightedMatches(`0[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.SelectWeightedMatches(System.Collections.Generic.IEnumerable{`0},System.Int32)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.SelectWeightedMatches(System.ValueTuple{`0,System.Int32}[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.SelectWeightedMatches(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,System.Int32}})">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.SelectBestMatches(`0[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.SelectBestMatches(System.Collections.Generic.IEnumerable{`0})">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.GetAllSortedByWeight(System.Int32,`0[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.GetAllSortedByWeight(`0[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.GetAllSortedByWeight(System.Collections.Generic.IEnumerable{`0})">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.GetAllSortedByWeight(System.Collections.Generic.IList{`0},System.Int32)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.GetAllSortedByWeight(System.ValueTuple{`0,System.Int32}[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.GetAllSortedByWeight(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,System.Int32}})">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.GetAllSortedByBestMatch(`0[])">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.GetAllSortedByBestMatch(System.Collections.Generic.IEnumerable{`0})">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="M:TagedCollection`2.GetEnumerator">
+            <summary><inheritdoc/></summary>
+        </member>
+    </members>
+</doc>

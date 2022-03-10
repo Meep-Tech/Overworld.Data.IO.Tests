@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Overworld.SimpleUx.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Simple.Ux.Data.Unity.DisplayType">
+            <summary>
+            Overworld specific display types.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Unity.DisplayType.Executeable">
+            <summary>
+            A set of modular overworld executables.
+            </summary>
+        </member>
+    </members>
+</doc>

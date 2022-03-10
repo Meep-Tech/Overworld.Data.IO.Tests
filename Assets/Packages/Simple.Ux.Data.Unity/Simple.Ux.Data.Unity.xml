@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Simple.Ux.Data.Unity</name>
+    </assembly>
+    <members>
+        <member name="T:Simple.Ux.Data.Unity.DisplayType">
+            <summary>
+            Unity specific display types.
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Unity.DisplayType.ColorPicker">
+            <summary>
+            Used to pick colors
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Unity.DisplayType.Image">
+            <summary>
+            Used to display images
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Unity.DisplayType.UnityUIElement">
+            <summary>
+            Used to display images
+            </summary>
+        </member>
+        <member name="M:Simple.Ux.Data.Unity.DisplayType.#ctor(System.String,Simple.Ux.Data.DataField.DisplayType.DefaultFieldConstructor,System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Make a new display type
+            </summary>
+        </member>
+        <member name="T:Simple.Ux.Data.Unity.UnityUIElement">
+            <summary>
+            Represents a custom unity UI element
+            </summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Unity.UnityUIElement.View">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Simple.Ux.Data.Unity.UnityUIElement.RectTransform">
+            <summary>
+            The rect-transform of the UI element this controls.
+            </summary>
+        </member>
+    </members>
+</doc>

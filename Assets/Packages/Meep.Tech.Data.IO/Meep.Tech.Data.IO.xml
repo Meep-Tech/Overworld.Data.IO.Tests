@@ -1,0 +1,672 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Meep.Tech.Data.IO</name>
+    </assembly>
+    <members>
+        <member name="T:Meep.Tech.Data.IO.ArchetypePorter">
+            <summary>
+            Base statics and accesability stuff for non generic ArchetypePorter access.
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter.NameConfigKey">
+            <summary>
+            Key for the name value in the config
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter.PackageNameConfigKey">
+            <summary>
+            Key for the package name value in the config
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter.DescriptionConfigKey">
+            <summary>
+            Key for the description in the config
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter.TagsConfigOptionKey">
+            <summary>
+            Used for a list of tags in json configs
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter.ImportFolderName">
+            <summary>
+            The imports folder name
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter.ProcessedImportsFolderName">
+            <summary>
+            The finished imports folder name.
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter.UnProccessedImportsFolderName">
+            <summary>
+            The finished imports folder name.
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter.NameOverrideSetting">
+            <summary>
+            Option parameter to override the object name
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter.PagkageNameOverrideSetting">
+            <summary>
+            Option parameter to override the object name
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter.FromSingleArchetypeFolderImportOptionsKey">
+            <summary>
+            Option parameter specifying a set of files to import came from an Single Archetype Sub-Folder.
+            Accepts a bool
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter.DefaultConfigFileName">
+            <summary>
+            The name of the config json file.
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ArchetypePorter.Universe">
+            <summary>
+            The universe this imports into
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ArchetypePorter.RootModsFolder">
+            <summary>
+            Quick access to the root mods folder being used.
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ArchetypePorter.ValidImportOptionKeys">
+            <summary>
+            Keys that work for options for imports.
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ArchetypePorter.ValidConfigOptionKeys">
+            <summary>
+            Valid Keys for the config.json
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ArchetypePorter.SubFolderName">
+            <summary>
+            The default package name for archetyps of this type
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ArchetypePorter.ArchetypeBaseType">
+            <summary>
+            The base type of archetype this imports.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter.FilterOutInvalidFilenames(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Helper to filter out invalid files for porters.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter.GetValidFlatFilesAndDirectoriesFromDirectory(System.String)">
+            <summary>
+            Helper function to get all the valid flat files and directory names that the importer uses.
+            </summary>
+        </member>
+        <member name="T:Meep.Tech.Data.IO.ArchetypePorter`1">
+            <summary>
+            used to im/export archetypes of a specific type from mods
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ArchetypePorter`1.ArchetypeBaseType">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ArchetypePorter`1._getCurrentUserName">
+            <summary>
+            The user in control of the current game, and imports.
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter`1._cachedResources">
+            <summary>
+            The cached archetypes of this kind, by resource id
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ArchetypePorter`1._cachedResourcesByPackage">
+            <summary>
+            The cached archetypes of this kind, by package name then resource id.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.#ctor(System.Func{System.String},Meep.Tech.Data.Universe)">
+            <summary>
+            Make a new type of archetype porter with inheritance
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.TryToGetGetCachedArchetype(System.String)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="resourceKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.GetCachedArchetype(System.String)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="resourceKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.GetFolderFor(`0)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.GetArchetypeFolderAndDeconstructKey(System.String,System.String@,System.String@)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.GetArchetypeFolderFromKey(System.String)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.ConstructArchetypeKeys(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Construct the keys for a type given the main asset file, config, and options.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.GetDefaultPackageName">
+            <summary>
+            Get the default package name
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.TryToGetConfig(System.Collections.Generic.IEnumerable{System.String},System.String@)">
+            <summary>
+            Try to get the _config.json from the set of provided files.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.TryToFindAndImportIndividualArchetypeFromModFolder(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.ImportIndividualArchetypeFromModFolder(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.TryToFindAndImportMod(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.TryToFindAndImportMod(System.String,System.Collections.Generic.IEnumerable{`0}@,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.ImportMod(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.ImportAndBuildArchetypesFromModsFolder(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            This searches the Mods folder's Archetype-Sub-Folder for this type, and imports all flat contents using ImportAndBuildNewArchetypesFromLooseFilesAndFolders.
+            Then this goes though each valid Mod folder file in the provided directory and runs the same on each Archetype-Sub-Folder within them as well.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.ImportAndPackageModsFromImportsFolder(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            This searches the __imports directory of the mods folder and looks in the Archetype-Sub-Folder for this type. From therethis imports all flat contents using ImportAndBuildNewArchetypesFromLooseFilesAndFolders.
+            Then this goes though each valid Mod folder file in the __imports directory and runs the same on each Archetype-Sub-Folder within them as well.
+            This also packages the results and places the efficient and packaged mods into the mods folder.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.ImportAndBuildNewArchetypesFromLooseFilesAndFolders(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.HashSet{System.String}@)">
+            <summary>
+            Loose file import first searches for provided json config files (starting with _config.json) and obeys what they say to do.
+            It then searches for provided folder names, and searches the folder contents for either a json for config, or the first Asset file to import and ignores all other files in these provided directories.
+            It then goes though the originally provided loose Asset files (such as pngs) and tries to import each as it's own Archetype.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1._updateModData(System.String,System.String,System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Updates the universes mod package data.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.BuildLooselyFromConfig(Newtonsoft.Json.Linq.JObject,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary>
+            Used to build from a collection of files with a specific master config file.
+            The master config file is also always provided as the first item in assetFiles.
+            </summary>
+            <param name="config">The provided config.json file</param>
+            <param name="assetFiles">All of the asset file locations provided to try to build with</param>
+            <param name="options">Import/Build options</param>
+            <param name="processedFiles">All files touched/processed by the builder</param>
+            <returns>All archetypes built from this config and asset files.</returns>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.BuildLooselyFromAssets(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary>
+            Used to build from a collection of files without specific master config file.
+            The master config file is also always provided as the first item in assetFiles.
+            </summary>
+            <param name="assetFiles">All of the asset file locations provided to try to build with</param>
+            <param name="options">Import/Build options</param>
+            <param name="processedFiles">All files touched/processed by the builder</param>
+            <returns>All archetypes built from this config and asset files.</returns>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.BuildAllArchetypesFromSingleArchetypeFolder(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{System.String}@,System.Boolean)">
+            <summary>
+            This processes this folder, and all sub folders, as "single archetype folders".
+            This means it will search this (and each sub folder if recusive is enabled) for a single config file, or asset to build an archetype form, ignoring files wthat begin with . or _
+            This just ignores directories with no valid items as well. 
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.BuildArchetypeFromCompiledData(System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject,System.Collections.Generic.Dictionary{System.String,System.Object},Meep.Tech.Data.Universe)">
+            <summary>
+            Helper function for building the final archetypes using the correct ctor
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.GetPorterConstructorForArchetypeType(System.Type)">
+            <summary>
+            Can be used to help get the porter constructor for an archetype.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.SerializeArchetypeToModFiles(`0,System.String)">
+            <summary>
+            Serialize this archetype to a set of files in the mod folder.
+            </summary>
+            <param name="archetype">The archetype to serialize into a file or files</param>
+            <param name="archetypeModFolderPath">The root path to save files to for this archetype</param>
+            <returns>The newly serialized file's locations</returns>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ArchetypePorter`1.SerializeArchetypeToModFolder(`0)">
+            <summary><inheritdoc/></summary>
+        </member>
+        <member name="T:Meep.Tech.Data.IO.IArchetypePorter">
+            <summary>
+            used to im/export archetypes from mods
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.GetCachedArchetype(System.String)">
+            <summary>
+            Get an already loaded archetype
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.TryToGetGetCachedArchetype(System.String)">
+            <summary>
+            Try to get an already loaded archetype
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.LoadArchetypeFromModFolder(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            get an archetype from the mods folder files
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.TryToFindArchetypeAndLoadFromModFolder(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Try to get an existing archetype from the compiled mod folder files.
+            This doesn't throw if it finds no files, but may throw if the found files are invalid, or the archetype already exists.
+            Returns null on failure to find.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.ImportAndBuildNewArchetypesFromLooseFilesAndFolders(System.String[],System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.HashSet{System.String}@)">
+            <summary>
+            Import and build all archetypes from the provided loose files and folder names.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.ImportAndBuildNewArchetypesFromModsFolder(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Import and build all archetypes from the provided mods folder location using the expected mods folder structure.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.ImportAndPackageModsFromImportsFolder(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Import and build all archetypes from the provided imports folder location using the expected mods folder structure.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.ConstructArchetypeKeys(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Construct all of the needed keys for an asset/archetype.
+            </summary>
+            <param name="primaryAssetFilename">The promary asset file being imported</param>
+            <param name="fromSingleArchetypeFolder">If this is from a single archetype folder (not loose assets)</param>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.GetArchetypeFolderAndDeconstructKey(System.String,System.String@,System.String@)">
+            <summary>
+            Get the sub folder under the mod folder on the device used for this specfic archetype,
+            also splits up the key into it's parts
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.GetArchetypeFolderFromKey(System.String)">
+            <summary>
+            Get an archetype folder from just the resource key.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.GetFolderFor(Meep.Tech.Data.Archetype)">
+            <summary>
+            Get the folder for a given archetype
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.GetDefaultPackageName">
+            <summary>
+            Get the current default package name
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IArchetypePorter.SerializeArchetypeToModFolder(Meep.Tech.Data.Archetype)">
+            <summary>
+            Serialize this archetype to a set of files in the mod folder.
+            </summary>
+            <param name="archetype">The archetype to serialize into a file or files</param>
+            <returns>The newly serialized file's locations</returns>
+        </member>
+        <member name="T:Meep.Tech.Data.IO.IPortableArchetype">
+            <summary>
+            An archetype that can be ported to/from a mod folder.
+            
+            These types also require a private ctor with signagure with params:
+            <para>
+            string name,
+            string resourceKey,
+            string packageName,
+            JObject config,
+            Dictionary[string, object] importOptionsAndObjects
+            </para>
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.IPortableArchetype.ResourceKey">
+            <summary>
+            The unique resource key that can be used to identify this archetype and find it's mod folder.
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.IPortableArchetype.PackageKey">
+            <summary>
+            The package this archetype came from
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.IPortableArchetype.DefaultPackageKey">
+            <summary>
+            The default package key for this archetype type
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.IPortableArchetype.GenerateConfig">
+            <summary>
+            Generates a config file for this Archetype.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Meep.Tech.Data.IO.IPortableArchetype.Unload" -->
+        <member name="T:Meep.Tech.Data.IO.ModPorterContext">
+            <summary>
+            Settings and data for mod porters.
+            </summary>
+        </member>
+        <member name="F:Meep.Tech.Data.IO.ModPorterContext.ModFolderName">
+            <summary>
+            The base mod folder name
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ModPorterContext.RootModsFolder">
+            <summary>
+            The root mod folder.
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ModPorterContext.Porters">
+            <summary>
+            The porters.
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ModPorterContext.PortersByArchetypeSubfolder">
+            <summary>
+            The porters.
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ModPorterContext.ImportedMods">
+            <summary>
+            All the mods that were imported using porters.
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ModPorterContext.Universe">
+            <summary>
+            The universe for this context.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.#ctor(Meep.Tech.Data.Universe,System.String,System.Collections.Generic.IEnumerable{Meep.Tech.Data.IO.ArchetypePorter})">
+            <summary>
+            Make new mod porter settings to add to a universe.
+            </summary>
+            <param name="rootApplicationPersistentDataFolder">The directory to put the mods folder inside of</param>
+            <param name="porters"></param>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.GetPorterFor``1">
+            <summary>
+            Get the desired porter.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.TryToGetPorterFor``1">
+            <summary>
+            Try to get the desired porter.
+            Null on none found.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.TryToGetPorterFor``1(Meep.Tech.Data.IO.ArchetypePorter{``0}@)">
+            <summary>
+            Try to get the desired porter.
+            Null on none found.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.GetModPackage(System.String)">
+            <summary>
+            Get a modpackage by key.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.TryToGetModPackage(System.String)">
+            <summary>
+            Get a modpackage by key.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.TryToGetModPackage(System.String,Meep.Tech.Data.IO.ModPackage@)">
+            <summary>
+            Get a modpackage by key.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.GetResources(System.Type,System.String)">
+            <summary>
+            Get the archetypes for the given resource key and type.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.TryToGetResources(System.Type,System.String)">
+            <summary>
+            Try to get the archetypes for the given resource key and type.
+            Returns empty enumerable on failure to find.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.TryToGetResources(System.Type,System.String,System.Collections.Generic.IEnumerable{Meep.Tech.Data.IO.IPortableArchetype}@)">
+            <summary>
+            Try to get the archetypes for the given resource key and type.
+            provides an empty enumerable on failure to find.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.GetResources``1(System.String)">
+            <summary>
+            Get the archetypes for the given resource key and type.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.TryToGetResources``1(System.String)">
+            <summary>
+            Try to get the archetypes for the given resource key and type.
+            Returns empty enumerable on failure to find.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.TryToGetResources``1(System.String,System.Collections.Generic.IEnumerable{``0}@)">
+            <summary>
+            Try to get the archetypes for the given resource key and type.
+            provides an empty enumerable on failure to find.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.TryToGetResourcesOfUnknownType(System.String)">
+            <summary>
+            Try to find any archetypes with the given resource key, reguardless of their base type.
+            Returns empty if none found.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPorterContext.TryToGetResourcesOfUnknownType(System.String,System.Collections.Generic.IEnumerable{Meep.Tech.Data.IO.IPortableArchetype}@)">
+            <summary>
+            Try to find any archetypes with the given resource key, reguardless of their base type.
+            provides empty if none found.
+            </summary>
+        </member>
+        <member name="T:Meep.Tech.Data.IO.ModContextExtensions">
+            <summary>
+            Helpers to get mods and resources from the universe
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModContextExtensions.GetModData(Meep.Tech.Data.Universe)">
+            <summary>
+            Get the full mod data from the given universe.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModContextExtensions.GetModPackage(Meep.Tech.Data.Universe,System.String)">
+            <summary>
+            Get a mod package from this universe given the package or resource key.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModContextExtensions.TryToGetModResources(Meep.Tech.Data.Universe,System.String)">
+            <summary>
+            Get a mod package from this universe given the package or resource key.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModContextExtensions.GetModResources``1(Meep.Tech.Data.Universe,System.String)">
+            <summary>
+            Get a mod package from this universe given the package or resource key.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.UniverseModContextSetupExtensions.AddModImportContext(Meep.Tech.Data.Universe,System.String,System.Collections.Generic.IEnumerable{Meep.Tech.Data.IO.ArchetypePorter})">
+            <summary>
+            Add default mod import settings using just the porters to use.
+            </summary>
+            <param name="rootApplicationPersistentDataFolder">The directory to put the mods folder inside of</param>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.UniverseModContextSetupExtensions.AddModImportContext(Meep.Tech.Data.Universe,Meep.Tech.Data.IO.ModPorterContext)">
+            <summary>
+            Add a custom mod import settings object of your own.
+            </summary>
+        </member>
+        <member name="T:Meep.Tech.Data.IO.ModPackage">
+            <summary>
+            Contains metadata about a mod-package.
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ModPackage.Key">
+            <summary>
+            The unique name of this mod package
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.ModPackage.ImportedArchetypesByResourceKey">
+            <summary>
+            The archetypes imported by this mod package, indexed by the resource key used to import them.
+            This value is cached and re-updated on the first call after a mod item is added or removed from this package.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPackage.Get(System.Type,System.String)">
+            <summary>
+            Get the archetypes for the given resource key and type.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPackage.TryToGet(System.Type,System.String)">
+            <summary>
+            Try to get the archetypes for the given resource key and type.
+            Returns empty enumerable on failure to find.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPackage.TryToGet(System.Type,System.String,System.Collections.Generic.IEnumerable{Meep.Tech.Data.IO.IPortableArchetype}@)">
+            <summary>
+            Try to get the archetypes for the given resource key and type.
+            provides an empty enumerable on failure to find.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPackage.Get``1(System.String)">
+            <summary>
+            Get the archetypes for the given resource key and type.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPackage.TryToGet``1(System.String)">
+            <summary>
+            Try to get the archetypes for the given resource key and type.
+            Returns empty enumerable on failure to find.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPackage.TryToGet``1(System.String,System.Collections.Generic.IEnumerable{``0}@)">
+            <summary>
+            Try to get the archetypes for the given resource key and type.
+            provides an empty enumerable on failure to find.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPackage.TryToGetResourcesOfUnknownType(System.String)">
+            <summary>
+            Try to find any archetypes with the given resource key, reguardless of their base type.
+            Returns empty if none found.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.ModPackage.TryToGetResourcesOfUnknownType(System.String,System.Collections.Generic.IEnumerable{Meep.Tech.Data.IO.IPortableArchetype}@)">
+            <summary>
+            Try to find any archetypes with the given resource key, reguardless of their base type.
+            provides empty if none found.
+            </summary>
+        </member>
+        <member name="T:Meep.Tech.Data.IO.Tests.PorterTester`1">
+            <summary>
+            A test of a porter and it's abilities.
+            These tests create and then destroy a default universe, multi-threading tests is not currently supported.
+            </summary>
+        </member>
+        <member name="T:Meep.Tech.Data.IO.Tests.PorterTester`1.ImportWithConfigAndDummyFilesTest">
+            <summary>
+            Make a test using a dummy filesystem and config file.
+            The config will be applied to the default dummy json file provided,
+            * Unless there's more than one, and the default chosen is not named _config.json; In that case it will throw a TestFailed exception.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.Tests.PorterTester`1.ImportWithConfigAndDummyFilesTest.#ctor(System.String,System.Collections.Generic.HashSet{System.String},System.Func{System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{System.String},Meep.Tech.Data.IO.Tests.PorterTester{`0}.Test.TestResult},Newtonsoft.Json.Linq.JObject,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Set up a Test using a dummy filesystem and provided config override.
+            </summary>
+            <param name="dummyFileSystem">Files provided to the Porter.Tester running this, but with the location in the dummy filesystem, starting with ./ or ../ depending. 3 empty parent folders are added to this dummy file system as well. If a json config is provided, this should also include an .json file that was not passed into the test runner to overwrite with the provided json config.</param>
+            <param name="config">the override for the default json config</param>
+            <param name="validateCreatedTypesAndProccessedFiles">Used to validate the test and the type, and return the test result</param>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.Tests.PorterTester`1.Porter">
+            <summary>
+            The porter to use in testing.
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.Tests.PorterTester`1.TestModsFolder">
+            <summary>
+            The mods folder to use for testing imports
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.Tests.PorterTester`1.#ctor(System.String,Meep.Tech.Data.IO.ArchetypePorter{`0},System.Collections.Generic.HashSet{System.String},System.Action{Meep.Tech.Data.Configuration.Loader.Settings},System.Collections.Generic.IEnumerable{Meep.Tech.Data.IO.ArchetypePorter})">
+            <summary>
+            Make a new import tester.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.Tests.PorterTester`1.TryToGetDummyFile(System.String,System.String@)">
+            <summary>
+            Can be used by tests to get dummy files by name.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.Tests.PorterTester`1.Run(System.Collections.Generic.IEnumerable{Meep.Tech.Data.IO.Tests.PorterTester{`0}.Test})">
+            <summary>
+            Run all the provided tests using this porter and it's universe setup.
+            Don't call this in a runtime with an existing default universe!
+            </summary>
+        </member>
+        <member name="P:Meep.Tech.Data.IO.Tests.PorterTester`1.Test.UniqueTestName">
+            <summary>
+            The unique name of this test.
+            </summary>
+        </member>
+        <member name="M:Meep.Tech.Data.IO.Tests.PorterTester`1.Test.RunOn(Meep.Tech.Data.IO.Tests.PorterTester{`0})">
+            <summary>
+            Run this test on the given porter.
+            </summary>
+        </member>
+        <member name="T:Meep.Tech.Data.IO.Tests.PorterTester`1.Test.TestResult">
+            <summary>
+            The result of a Porter test.
+            </summary>
+        </member>
+    </members>
+</doc>
